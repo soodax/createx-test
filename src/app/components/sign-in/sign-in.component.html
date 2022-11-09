@@ -15,8 +15,8 @@
                 <span>Password</span>
                 <input (blur)="passwordCheck()" #passwordInputRef type="password" placeholder="Your password">
                 <button (click)="toggleHidden()"  class="password-access-btn">
-                    <img src="../../../assets/images/Closed-Eye.svg" *ngIf="!isPasswordHidden" alt="hide password">
-                    <img src="../../../assets/images/Eye.svg" *ngIf="isPasswordHidden" alt="show password">
+                    <img src="assets/images/Closed-Eye.svg" *ngIf="!isPasswordHidden" alt="hide password">
+                    <img src="assets/images/Eye.svg" *ngIf="isPasswordHidden" alt="show password">
                 </button>
                 <div #successMessageP class="success-message">Looks good!</div>
                 <div #dangerMessageP class="danger-message">Please provide a valid input.</div>
@@ -24,8 +24,8 @@
             <div class="sign-in__settings">
                 <div class="sign-in__keep">
                     <button (click)="isKeepMe = !isKeepMe" >
-                        <img *ngIf="isKeepMe" src="../../../assets/images/questions/checked.svg" alt="checkbox check">
-                        <img *ngIf="!isKeepMe" src="../../../assets/images/questions/unchecked.svg" alt="checkbox uncheck">
+                        <img *ngIf="isKeepMe" src="assets/images/questions/checked.svg" alt="checkbox check">
+                        <img *ngIf="!isKeepMe" src="assets/images/questions/unchecked.svg" alt="checkbox uncheck">
                     </button>
                     <span>Keep me signed in</span> 
                 </div>
@@ -41,14 +41,14 @@
         <div class="sign-in__socials">
             <span>Or sign in with</span>
             <div class="sign-in__icons">
-                <img src="../../../assets/images/contacts/Facebook.svg" alt="Facebook icon">
-                <img src="../../../assets/images/sign-in/Google.svg" alt="Google icon">
-                <img src="../../../assets/images/contacts/Twitter.svg" alt="Twitter icon">
-                <img src="../../../assets/images/contacts/Linked-In.svg" alt="Linked-In icon">
+                <img src="assets/images/contacts/Facebook.svg" alt="Facebook icon">
+                <img src="assets/images/sign-in/Google.svg" alt="Google icon">
+                <img src="assets/images/contacts/Twitter.svg" alt="Twitter icon">
+                <img src="assets/images/contacts/Linked-In.svg" alt="Linked-In icon">
             </div>
         </div>
         <a class="sign-in__close" routerLink="/">
-            <img src="../../../assets/images/sign-in/Cross.svg" alt="close button">
+            <img src="assets/images/sign-in/Cross.svg" alt="close button">
         </a>
 
 

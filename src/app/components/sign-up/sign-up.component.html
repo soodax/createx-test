@@ -21,8 +21,8 @@
                 <span>Password</span>
                 <input (blur)="passwordCheck1()" #passwordInputRef1 type="password" placeholder="Your password">
                 <button (click)="toggleHidden()"  class="password-access-btn">
-                    <img src="../../../assets/images/Closed-Eye.svg" *ngIf="!isPasswordHidden" alt="hide password">
-                    <img src="../../../assets/images/Eye.svg" *ngIf="isPasswordHidden" alt="show password">
+                    <img src="assets/images/Closed-Eye.svg" *ngIf="!isPasswordHidden" alt="hide password">
+                    <img src="assets/images/Eye.svg" *ngIf="isPasswordHidden" alt="show password">
                 </button>
                 <div #successMessageP1 class="success-message">Looks good!</div>
                 <div #dangerMessageP1 class="danger-message">Please provide a valid input.</div>
@@ -31,8 +31,8 @@
                 <span>Confirm Password</span>
                 <input (blur)="passwordCheck2()" #passwordInputRef2 type="password" placeholder="Confirm Password">
                 <button (click)="toggleHidden()"  class="password-access-btn">
-                    <img src="../../../assets/images/Closed-Eye.svg" *ngIf="!isPasswordHidden" alt="hide password">
-                    <img src="../../../assets/images/Eye.svg" *ngIf="isPasswordHidden" alt="show password">
+                    <img src="assets/images/Closed-Eye.svg" *ngIf="!isPasswordHidden" alt="hide password">
+                    <img src="assets/images/Eye.svg" *ngIf="isPasswordHidden" alt="show password">
                 </button>
                 <div #successMessageP2 class="success-message">Looks good!</div>
                 <div #dangerMessageP2 class="danger-message">Please provide a valid input.</div>
@@ -40,8 +40,8 @@
             <div class="sign-up__settings">
                 <div class="sign-up__keep">
                     <button (click)="isRememberMe = !isRememberMe" >
-                        <img *ngIf="isRememberMe" src="../../../assets/images/questions/checked.svg" alt="checkbox check">
-                        <img *ngIf="!isRememberMe" src="../../../assets/images/questions/unchecked.svg" alt="checkbox uncheck">
+                        <img *ngIf="isRememberMe" src="assets/images/questions/checked.svg" alt="checkbox check">
+                        <img *ngIf="!isRememberMe" src="assets/images/questions/unchecked.svg" alt="checkbox uncheck">
                     </button>
                     <span>Remember me</span> 
                 </div>
@@ -55,14 +55,14 @@
         <div class="sign-up__socials">
             <span>Or sign in with</span>
             <div class="sign-up__icons">
-                <img src="../../../assets/images/contacts/Facebook.svg" alt="Facebook icon">
-                <img src="../../../assets/images/sign-in/Google.svg" alt="Google icon">
-                <img src="../../../assets/images/contacts/Twitter.svg" alt="Twitter icon">
-                <img src="../../../assets/images/contacts/Linked-In.svg" alt="Linked-In icon">
+                <img src="assets/images/contacts/Facebook.svg" alt="Facebook icon">
+                <img src="assets/images/sign-in/Google.svg" alt="Google icon">
+                <img src="assets/images/contacts/Twitter.svg" alt="Twitter icon">
+                <img src="assets/images/contacts/Linked-In.svg" alt="Linked-In icon">
             </div>
         </div>
         <a class="sign-up__close" routerLink="/">
-            <img src="../../../assets/images/sign-in/Cross.svg" alt="close button">
+            <img src="assets/images/sign-in/Cross.svg" alt="close button">
         </a>
 
 
