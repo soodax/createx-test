@@ -7,19 +7,35 @@
             </p>
             <div class="form-input-default">
                 <span>Full Name</span>
-                <input type="text" placeholder="Your full name">
+                <input (blur)="nameCheck()" #nameInputRef type="text" placeholder="Your full name">
+                <div #successMessageN class="success-message">Looks good!</div>
+                <div #dangerMessageN class="danger-message">Please provide a valid input.</div>
             </div>
             <div class="form-input-default">
                 <span>Email</span>
-                <input type="email" placeholder="Your working email">
+                <input (blur)="emailCheck()" #emailInputRef type="email" placeholder="Your working email">
+                <div #successMessageE class="success-message">Looks good!</div>
+                <div #dangerMessageE class="danger-message">Please provide a valid input.</div>
             </div>
             <div class="form-input-default">
                 <span>Password</span>
-                <input type="password" placeholder="Your password">
+                <input (blur)="passwordCheck1()" #passwordInputRef1 type="password" placeholder="Your password">
+                <button (click)="toggleHidden()"  class="password-access-btn">
+                    <img src="../../../assets/images/Closed-Eye.svg" *ngIf="!isPasswordHidden" alt="hide password">
+                    <img src="../../../assets/images/Eye.svg" *ngIf="isPasswordHidden" alt="show password">
+                </button>
+                <div #successMessageP1 class="success-message">Looks good!</div>
+                <div #dangerMessageP1 class="danger-message">Please provide a valid input.</div>
             </div>
             <div class="form-input-default">
                 <span>Confirm Password</span>
-                <input type="password" placeholder="Confirm Password">
+                <input (blur)="passwordCheck2()" #passwordInputRef2 type="password" placeholder="Confirm Password">
+                <button (click)="toggleHidden()"  class="password-access-btn">
+                    <img src="../../../assets/images/Closed-Eye.svg" *ngIf="!isPasswordHidden" alt="hide password">
+                    <img src="../../../assets/images/Eye.svg" *ngIf="isPasswordHidden" alt="show password">
+                </button>
+                <div #successMessageP2 class="success-message">Looks good!</div>
+                <div #dangerMessageP2 class="danger-message">Please provide a valid input.</div>
             </div>
             <div class="sign-up__settings">
                 <div class="sign-up__keep">
@@ -31,9 +47,9 @@
                 </div>
             </div>      
                 
-            <button class="sign-up__button">Sign up</button>
+            <button (click)="submit()" class="sign-up__button">Sign up</button>
             <div class="sign-up__register">
-                Already have an account? <a href="#">Sign in</a> 
+                Already have an account? <a routerLink="/sign-in">Sign in</a> 
             </div>
         </div>
         <div class="sign-up__socials">

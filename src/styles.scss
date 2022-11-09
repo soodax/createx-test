@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
+//Шаблоны шрифтов
+%Lato700 {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 700;
+}
+
+%Lato400 {
+	font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+}
+
 /* You can add global styles to this file, and also import other style files */
 
 /*Обнуление*/
@@ -38,11 +51,11 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 /*--------------------*/
 
 .container {
-    max-width: 1283px;
+    max-width: 1280px;
     margin: 0 auto;
-    border: 1px solid black;
 }
 
+//Заголовки
 h3 {
 	font-family: 'Lato';
 	font-style: normal;
@@ -64,7 +77,7 @@ h2 {
 	margin: 8px 0 40px 0;
 }
 
-//form inputs
+//Инпуты
 .form-input-default {
 	display: flex;
 	flex-direction: column;
@@ -87,6 +100,10 @@ h2 {
 		max-height: 44px;
 	}
 
+	input:focus {
+		border: 1px solid rgba(255, 63, 58, 0.4);
+		box-shadow: 0px 80px 80px -20px rgba(255, 63, 58, 0.08), 0px 30px 24px -10px rgba(255, 63, 58, 0.05), 0px 12px 10px -6px rgba(255, 63, 58, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+	}
 
 	span {
 		font-family: 'Lato';
@@ -95,14 +112,42 @@ h2 {
 		font-size: 16px;
 		line-height: 160%;
 		color: #424551;
-
 	}
 }
 
-//buttons
+//Кнопки
 .password-access-btn {
 	position: absolute;
-	bottom: 10px;
+	bottom: 0;
 	right: 16px;
+	transform: translate(0, -50%);
 	background: transparent;
 }
+
+//Уведомления
+.success-message {
+	position: absolute;
+	bottom: -18px;
+	left: 0;
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 150%;
+	color: #03CEA4;
+	display: none;
+}
+
+.danger-message {
+	position: absolute;
+	bottom: -18px;
+	left: 0;
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 150%;
+	color: #FF4242;
+	display: none;
+}
+

@@ -1,3 +1,5 @@
+@import '../../../styles.scss';
+
 .questions {
 
     margin: 0 0 180px 0;
@@ -5,9 +7,12 @@
     &__row {
         display: flex;
         justify-content: center;
+        align-items: center;
+
+        @media (max-width: 900px) {
+            flex-direction: column;           
+        }
     }
-
-
 
     &__illustration {
         flex: 1 1 50%;
@@ -25,10 +30,6 @@
         flex-direction: column;
     }
 
-
-
-
-
 }
 
 .questions-form {
@@ -39,37 +40,20 @@
     &__row {
         display: flex;
         gap: 25px;
+
+        @media (max-width: 767px) {
+            flex-direction: column;
+        }
     }
 
-    // &__item {
-    //     display: flex;
-    //     flex-direction: column;
-    //     gap: 8px;
-    //     border: 1px solid black;
-    //     flex: 1 1 100%;
-
-    //     input {
-    //         font-family: 'Lato';
-    //         font-style: normal;
-    //         font-weight: 400;
-    //         font-size: 16px;
-    //         line-height: 160%;
-    //         color: #9A9CA5;
-    //         padding: 13px 0 13px 16px;
-    //         background: #FFFFFF;
-    //         border: 1px solid #D7DADD;
-    //         border-radius: 4px;
-    //     }
-
-    // }
-
     &__name {
-        font-family: 'Lato';
-        font-style: normal;
-        font-weight: 400;
+        // font-family: 'Lato';
+        // font-style: normal;
+        // font-weight: 400;
         font-size: 16px;
         line-height: 160%;
         color: #424551;
+        @extend %Lato400;
 
     }
 }
@@ -79,17 +63,22 @@
     gap: 50px;
     margin: 48px 0 0 0;
 
+    @media (max-width: 480px) {
+        flex-direction: column;
+    }
+
     &__info {
         flex: 1 1 50%;
         display: flex;
         align-items: baseline;
         gap: 12px;
-        font-family: 'Lato';
-        font-style: normal;
-        font-weight: 400;
+        // font-family: 'Lato';
+        // font-style: normal;
+        // font-weight: 400;
         font-size: 16px;
         line-height: 160%;
         color: #424551;
+        @extend %Lato400;
 
     }
 
@@ -102,12 +91,11 @@
         flex: 1 1 50%;
     }
 
-    &__submit button{
-        
+    &__submit button{      
         width: 100%;
-        font-family: 'Lato';
-        font-style: normal;
-        font-weight: 700;
+        // font-family: 'Lato';
+        // font-style: normal;
+        // font-weight: 700;
         font-size: 16px;
         line-height: 52px;
         display: flex;
@@ -118,5 +106,6 @@
         color: #FFFFFF;
         background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
         border-radius: 4px;
+        @extend %Lato700;
     }
 }

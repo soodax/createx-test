@@ -7,18 +7,19 @@
             </p>
             <div class="form-input-default">
                 <span>Email</span>
-                <input type="email" placeholder="Your working email">
+                <input (blur)="emailCheck()" #emailInputRef type="email" placeholder="Your working email">
+                <div #successMessageE class="success-message">Looks good!</div>
+                <div #dangerMessageE class="danger-message">Please provide a valid input.</div>
             </div>
             <div class="form-input-default">
                 <span>Password</span>
-                <input #passwordInputRef type="password" placeholder="Your password">
-                <button class="password-access-btn">
-                    
-                </button>
+                <input (blur)="passwordCheck()" #passwordInputRef type="password" placeholder="Your password">
                 <button (click)="toggleHidden()"  class="password-access-btn">
                     <img src="../../../assets/images/Closed-Eye.svg" *ngIf="!isPasswordHidden" alt="hide password">
                     <img src="../../../assets/images/Eye.svg" *ngIf="isPasswordHidden" alt="show password">
                 </button>
+                <div #successMessageP class="success-message">Looks good!</div>
+                <div #dangerMessageP class="danger-message">Please provide a valid input.</div>
             </div>
             <div class="sign-in__settings">
                 <div class="sign-in__keep">
@@ -32,7 +33,7 @@
                     <a href="#">Forgot password?</a>
                 </div>
             </div>          
-            <button class="sign-in__button">Sign in</button>
+            <button (click)="submit()" class="sign-in__button">Sign in</button>
             <div class="sign-in__register">
                 Don't have an account? <a routerLink="/sign-up">Sign up</a> 
             </div>

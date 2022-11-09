@@ -1,13 +1,21 @@
+@import '../../../styles.scss';
+
 .contacts {
+    margin: 0 0 168px 0;
 
     &__row {
         display: flex;
         justify-content: space-between;
+
+        @media (max-width: 900px) {
+            flex-direction: column;
+        }
     }
 
     &__info {
         display: flex;
         flex-direction: column;
+        flex: 1 1 50%;
     }
 
     &__list {
@@ -29,34 +37,33 @@
     }
 
     &__method {
-        font-family: 'Lato';
-        font-style: normal;
-        font-weight: 700;
+        // font-family: 'Lato';
+        // font-style: normal;
+        // font-weight: 700;
         font-size: 14px;
         line-height: 150%;
         color: #787A80;
+        @extend %Lato700;
 
     }
 
     &__main {
-        font-family: 'Lato';
-        font-style: normal;
-        font-weight: 400;
+        // font-family: 'Lato';
+        // font-style: normal;
+        // font-weight: 400;
         font-size: 18px;
         line-height: 150%;
         color: #1E212C;
+        @extend %Lato400;
 
     }
 
     &__map {
-        border: 1px solid black;
         display: flex;
         align-items: center;
         justify-content: center;
-
-        img {
-            width: 100%;
-        }
+        // width: 100%;
+        flex: 1 1 50%;
     }
 
     
@@ -68,4 +75,11 @@
     align-items: center;
     gap: 32px;
     margin: 24px 0 0 0;
+}
+
+#map {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    // flex: 1 1 50%;
 }

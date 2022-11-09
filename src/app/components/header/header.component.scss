@@ -1,13 +1,15 @@
+@import '../../../styles.scss';
+
 .header {
     
 
     &__row {
-        padding: 36px 40px 36px 0;
+        padding: 36px 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        @media (max-width: 767px) {
+        @media (max-width: 900px) {
             flex-direction: column;
         }
     }
@@ -48,11 +50,13 @@
 
     &__link {
         color: #424551;
-        font-family: 'Lato';
-        font-style: normal;
-        font-weight: 700;
+        // font-family: 'Lato';
+        // font-style: normal;
+        // font-weight: 700;
         font-size: 16px;
         line-height: 160%;
+        @extend %Lato700;
+    
     }
 
     &__link:hover {
@@ -72,25 +76,18 @@
         background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
         border-radius: 4px;
         padding: 0 40px;
-        font-family: 'Lato';
-        font-style: normal;
-        font-weight: 700;
+        // font-family: 'Lato';
+        // font-style: normal;
+        // font-weight: 700;
         font-size: 16px;
         line-height: 52px;
         color: white;
+        @extend %Lato700;
 
         @media (max-width: 767px) {
             padding: 0 10px;
         }
     }
-
-    // &__consultation a{
-
-
-    //     @media (max-width: 1100px) {
-    //         line-height: 20px;
-    //     }
-    // }
 
     
 
@@ -98,7 +95,7 @@
         padding: 0 0 0 37px;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
         gap: 9px;
 
         @media (max-width: 767px) {
@@ -107,12 +104,13 @@
     }
 
     &__login a{
-        font-family: 'Lato';
-        font-style: normal;
-        font-weight: 700;
+        // font-family: 'Lato';
+        // font-style: normal;
+        // font-weight: 700;
         font-size: 16px;
         line-height: 160%;
         color: #424551;
+        @extend %Lato700;
     }
 }
 
