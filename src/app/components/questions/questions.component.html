@@ -1,0 +1,53 @@
+<section class="questions">
+    <div class="container">
+        <div class="questions__row">
+            <div class="questions__illustration">
+                <img src="../../../assets/images/questions/illustration.svg" alt="woman illustration">
+            </div>
+            <div class="questions__main">
+                <h3>Any questions?</h3>
+                <h2>Drop us a line</h2>
+                <div class="questions-form">
+                    <div class="questions-form__row">
+                        <div class="form-input-default">
+                            <span>First Name*</span>
+                            <input type="text" placeholder="Your first name">
+                        </div>
+                        <div class="form-input-default">
+                            <span>Last  Name*</span>
+                            <input type="text" placeholder="Your last name">
+                        </div>
+                    </div>
+                    <div class="questions-form__row">
+                        <div class="form-input-default">
+                            <span>Email*</span>
+                            <input type="text" placeholder="Your working email">
+                        </div>
+                        <div class="form-input-default">
+                            <span>Phone</span>
+                            <input type="text" placeholder="Your phone number">
+                        </div>
+                    </div>
+                    <div class="questions-form__row">
+                        <div class="form-input-default">
+                            <span>Message*</span>
+                            <input type="text" placeholder="Your message">
+                        </div>
+                    </div>
+                </div>
+                <div class="agreement">
+                    <div class="agreement__info">
+                        <button (click)="isAgree = !isAgree" >
+                            <img *ngIf="isAgree" src="../../../assets/images/questions/checked.svg" alt="checkbox check">
+                            <img *ngIf="!isAgree" src="../../../assets/images/questions/unchecked.svg" alt="checkbox uncheck">
+                        </button>
+                        I agree to receive communications from Createx Online School
+                    </div>
+                    <div class="agreement__submit">
+                        <button>Send message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

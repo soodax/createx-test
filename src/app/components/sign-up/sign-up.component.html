@@ -1,0 +1,55 @@
+<div class="background">
+    <div class="sign-up">
+        <div class="sign-up__form">
+            <span class="sign-up__title">Sign up</span>
+            <p class="sign-up__info">
+                Registration takes less than a minute but gives you full control over your studying.
+            </p>
+            <div class="form-input-default">
+                <span>Full Name</span>
+                <input type="text" placeholder="Your full name">
+            </div>
+            <div class="form-input-default">
+                <span>Email</span>
+                <input type="email" placeholder="Your working email">
+            </div>
+            <div class="form-input-default">
+                <span>Password</span>
+                <input type="password" placeholder="Your password">
+            </div>
+            <div class="form-input-default">
+                <span>Confirm Password</span>
+                <input type="password" placeholder="Confirm Password">
+            </div>
+            <div class="sign-up__settings">
+                <div class="sign-up__keep">
+                    <button (click)="isRememberMe = !isRememberMe" >
+                        <img *ngIf="isRememberMe" src="../../../assets/images/questions/checked.svg" alt="checkbox check">
+                        <img *ngIf="!isRememberMe" src="../../../assets/images/questions/unchecked.svg" alt="checkbox uncheck">
+                    </button>
+                    <span>Remember me</span> 
+                </div>
+            </div>      
+                
+            <button class="sign-up__button">Sign up</button>
+            <div class="sign-up__register">
+                Already have an account? <a href="#">Sign in</a> 
+            </div>
+        </div>
+        <div class="sign-up__socials">
+            <span>Or sign in with</span>
+            <div class="sign-up__icons">
+                <img src="../../../assets/images/contacts/Facebook.svg" alt="Facebook icon">
+                <img src="../../../assets/images/sign-in/Google.svg" alt="Google icon">
+                <img src="../../../assets/images/contacts/Twitter.svg" alt="Twitter icon">
+                <img src="../../../assets/images/contacts/Linked-In.svg" alt="Linked-In icon">
+            </div>
+        </div>
+        <a class="sign-up__close" routerLink="/">
+            <img src="../../../assets/images/sign-in/Cross.svg" alt="close button">
+        </a>
+
+
+    </div>
+
+</div>
