@@ -1,57 +1,79 @@
 <div class="background">
     <div class="sign-up">
-        <div class="sign-up__form">
+        <form [formGroup]="signUpForm" class="sign-up__form">
             <span class="sign-up__title">Sign up</span>
             <p class="sign-up__info">
                 Registration takes less than a minute but gives you full control over your studying.
             </p>
-            <div class="form-input-default">
-                <span>Full Name</span>
-                <input (blur)="nameCheck()" #nameInputRef type="text" placeholder="Your full name">
-                <div #successMessageN class="success-message">Looks good!</div>
-                <div #dangerMessageN class="danger-message">Please provide a valid input.</div>
+            <div class="form-item">
+                <label for="name">Full Name</label>
+                <input formControlName="name" type="text" class="input"
+                    [ngClass]="{'input-error': submitted && signUpForm.controls.name.errors, 'input-default': !signUpForm.controls.name.errors || !submitted}"
+                    placeholder="Your full name">
+                <div class="danger-message" *ngIf="submitted && signUpForm.controls.name.errors?.required || submitted && signUpForm.controls.name.errors">
+                    Please provide a valid input.
+                </div>
+                <div class="success-message" *ngIf="submitted && !signUpForm.controls.name.errors">Looks good!</div>
             </div>
-            <div class="form-input-default">
-                <span>Email</span>
-                <input (blur)="emailCheck()" #emailInputRef type="email" placeholder="Your working email">
-                <div #successMessageE class="success-message">Looks good!</div>
-                <div #dangerMessageE class="danger-message">Please provide a valid input.</div>
+            <div class="form-item">
+                <label for="email">Email</label>
+                <input formControlName="email" type="email" class="input"
+                    [ngClass]="{'input-error': submitted && signUpForm.controls.email.errors, 'input-default': !signUpForm.controls.email.errors || !submitted}"
+                    placeholder="Your working email">
+                <div class="danger-message" *ngIf="submitted && signUpForm.controls.email.errors?.required || submitted && signUpForm.controls.email.errors ">
+                    Please provide a valid input.
+                </div>
+                <div class="success-message" *ngIf="submitted && !signUpForm.controls.email.errors">Looks good!</div>
             </div>
-            <div class="form-input-default">
-                <span>Password</span>
-                <input (blur)="passwordCheck1()" #passwordInputRef1 type="password" placeholder="Your password">
-                <button (click)="toggleHidden()"  class="password-access-btn">
-                    <img src="assets/images/Closed-Eye.svg" *ngIf="!isPasswordHidden" alt="hide password">
-                    <img src="assets/images/Eye.svg" *ngIf="isPasswordHidden" alt="show password">
+            <div class="form-item">
+                <label for="password">Password</label>
+                <input formControlName="password" #passwordInputRef1 type="password" placeholder="Your password"
+                    class="input"
+                    [ngClass]="{'input-error': submitted && signUpForm.controls.password.errors, 'input-default': !signUpForm.controls.password.errors || !submitted}">
+                <button (click)="toggleHidden()" class="password-access-btn">
+                    <img [src]="isPasswordHidden 
+                                ? 'assets/images/Eye.svg' 
+                                : 'assets/images/Closed-Eye.svg'" [alt]="isPasswordHidden 
+                                ? 'show password' 
+                                : 'hide password'">
                 </button>
-                <div #successMessageP1 class="success-message">Looks good!</div>
-                <div #dangerMessageP1 class="danger-message">Please provide a valid input.</div>
+                <div class="danger-message" *ngIf="submitted && signUpForm.controls.password.errors?.required || submitted && signUpForm.controls.password.errors">
+                    Please provide a valid input.</div>
+                <div class="success-message" *ngIf="submitted && !signUpForm.controls.password.errors">Looks good!</div>
             </div>
-            <div class="form-input-default">
-                <span>Confirm Password</span>
-                <input (blur)="passwordCheck2()" #passwordInputRef2 type="password" placeholder="Confirm Password">
-                <button (click)="toggleHidden()"  class="password-access-btn">
-                    <img src="assets/images/Closed-Eye.svg" *ngIf="!isPasswordHidden" alt="hide password">
-                    <img src="assets/images/Eye.svg" *ngIf="isPasswordHidden" alt="show password">
+            <div class="form-item">
+                <label for="password">Confirm Password</label>
+                <input formControlName="password" #passwordInputRef2 type="password" placeholder="Your password"
+                    class="input"
+                    [ngClass]="{'input-error': submitted && signUpForm.controls.password.errors, 'input-default': !signUpForm.controls.password.errors || !submitted}">
+                <button (click)="toggleHidden()" class="password-access-btn">
+                    <img [src]="isPasswordHidden 
+                                ? 'assets/images/Eye.svg' 
+                                : 'assets/images/Closed-Eye.svg'" [alt]="isPasswordHidden 
+                                ? 'show password' 
+                                : 'hide password'">
                 </button>
-                <div #successMessageP2 class="success-message">Looks good!</div>
-                <div #dangerMessageP2 class="danger-message">Please provide a valid input.</div>
+                <div class="danger-message" *ngIf="submitted && signUpForm.controls.password.errors?.required || submitted && signUpForm.controls.password.errors">
+                    Please provide a valid input.</div>
+                <div class="success-message" *ngIf="submitted && !signUpForm.controls.password.errors">Looks good!</div>
             </div>
             <div class="sign-up__settings">
                 <div class="sign-up__keep">
-                    <button (click)="isRememberMe = !isRememberMe" >
-                        <img *ngIf="isRememberMe" src="assets/images/questions/checked.svg" alt="checkbox check">
-                        <img *ngIf="!isRememberMe" src="assets/images/questions/unchecked.svg" alt="checkbox uncheck">
+                    <button (click)="isRememberMe = !isRememberMe">
+                        <img [src]="isRememberMe 
+                                ? 'assets/images/questions/checked.svg' 
+                                : 'assets/images/questions/unchecked.svg'" [alt]="isRememberMe 
+                                ? 'checkbox check' 
+                                : 'checkbox uncheck'">
                     </button>
-                    <span>Remember me</span> 
+                    <span>Remember me</span>
                 </div>
-            </div>      
-                
-            <button (click)="submit()" class="sign-up__button">Sign up</button>
-            <div class="sign-up__register">
-                Already have an account? <a routerLink="/sign-in">Sign in</a> 
             </div>
-        </div>
+            <button (click)="onSubmit()" class="sign-up__button">Sign up</button>
+            <div class="sign-up__register">
+                Already have an account? <a routerLink="/sign-in">Sign in</a>
+            </div>
+        </form>
         <div class="sign-up__socials">
             <span>Or sign in with</span>
             <div class="sign-up__icons">
@@ -64,8 +86,5 @@
         <a class="sign-up__close" routerLink="/">
             <img src="assets/images/sign-in/Cross.svg" alt="close button">
         </a>
-
-
     </div>
-
 </div>

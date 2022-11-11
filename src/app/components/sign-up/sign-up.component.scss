@@ -21,20 +21,14 @@
     position: relative;
 
     &__form {
-        
         display: flex;
         flex-direction: column;
         gap: 20px;
         padding: 48px 48px 24px 48px;
-
-
     }
 
 
     &__title {
-        // font-family: 'Lato';
-        // font-style: normal;
-        // font-weight: 700;
         font-size: 28px;
         line-height: 150%;
         color: #1E212C;
@@ -43,9 +37,6 @@
     }
 
     &__info {
-        // font-family: 'Lato';
-        // font-style: normal;
-        // font-weight: 400;
         font-size: 14px;
         line-height: 150%;
         color: #787A80;
@@ -59,8 +50,7 @@
         align-items: center;
     }
 
-    &__keep {
-        
+    &__keep {   
         display: flex;
         align-items: center;
         gap: 12px;
@@ -71,9 +61,6 @@
         }
 
         span {
-            // font-family: 'Lato';
-            // font-style: normal;
-            // font-weight: 400;
             font-size: 14px;
             line-height: 150%;
             color: #424551;
@@ -82,9 +69,6 @@
     }
 
     &__forgot a{
-        // font-family: 'Lato';
-        // font-style: normal;
-        // font-weight: 400;
         font-size: 14px;
         line-height: 150%;
         text-align: right;
@@ -98,9 +82,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        // font-family: 'Lato';
-        // font-style: normal;
-        // font-weight: 700;
         font-size: 16px;
         line-height: 52px;
         letter-spacing: 0.5px;
@@ -110,9 +91,6 @@
     }
 
     &__register {
-        // font-family: 'Lato';
-        // font-style: normal;
-        // font-weight: 400;
         font-size: 14px;
         line-height: 150%;
         color: #424551;
@@ -133,9 +111,6 @@
 
         span {
             text-align: center;
-            // font-family: 'Lato';
-            // font-style: normal;
-            // font-weight: 400;
             font-size: 14px;
             line-height: 150%;
             color: #787A80;

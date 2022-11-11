@@ -9,6 +9,8 @@ import { Component } from "@angular/core";
 export class QuestionsComponent {
     isAgree = true
 
+    ngOnInit() : void{
+    }
     // toggle() {
     //     this.isAgree = !this.isAgree
     // }

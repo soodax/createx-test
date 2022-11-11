@@ -26,10 +26,8 @@
         padding: 48px;
     }
 
+
     &__title {
-        // font-family: 'Lato';
-        // font-style: normal;
-        // font-weight: 700;
         font-size: 28px;
         line-height: 150%;
         color: #1E212C;
@@ -38,9 +36,6 @@
     }
 
     &__info {
-        // font-family: 'Lato';
-        // font-style: normal;
-        // font-weight: 400;
         font-size: 14px;
         line-height: 150%;
         color: #787A80;
@@ -65,9 +60,6 @@
         }
 
         span {
-            // font-family: 'Lato';
-            // font-style: normal;
-            // font-weight: 400;
             font-size: 14px;
             line-height: 150%;
             color: #424551;
@@ -76,9 +68,6 @@
     }
 
     &__forgot a{
-        // font-family: 'Lato';
-        // font-style: normal;
-        // font-weight: 400;
         font-size: 14px;
         line-height: 150%;
         text-align: right;
@@ -92,21 +81,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        // font-family: 'Lato';
-        // font-style: normal;
-        // font-weight: 700;
         font-size: 16px;
         line-height: 52px;
         letter-spacing: 0.5px;
         color: #FFFFFF;
         max-height: 44px;
+      
         @extend %Lato700;
     }
 
     &__register {
-        // font-family: 'Lato';
-        // font-style: normal;
-        // font-weight: 400;
         font-size: 14px;
         line-height: 150%;
         color: #424551;
@@ -127,9 +111,6 @@
 
         span {
             text-align: center;
-            // font-family: 'Lato';
-            // font-style: normal;
-            // font-weight: 400;
             font-size: 14px;
             line-height: 150%;
             color: #787A80;

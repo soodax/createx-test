@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
 //Шаблоны шрифтов
+%Lato900 {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 900;
+}
+
 %Lato700 {
 	font-family: 'Lato';
 	font-style: normal;
@@ -57,61 +63,35 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 
 //Заголовки
 h3 {
-	font-family: 'Lato';
-	font-style: normal;
-	font-weight: 700;
 	font-size: 16px;
 	line-height: 150%;
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	color: #1E212C;
+	@extend %Lato700;
 }
 
 h2 {
-	font-family: 'Lato';
-	font-style: normal;
-	font-weight: 900;
 	font-size: 46px;
 	line-height: 130%;
 	color: #1E212C;
 	margin: 8px 0 40px 0;
+	@extend %Lato900;
 }
 
-//Инпуты
-.form-input-default {
+//Элементы формы
+.form-item {
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
 	flex: 1 1 100%;
 	position: relative;
-	
 
-	input {
-		font-family: 'Lato';
-		font-style: normal;
-		font-weight: 400;
-		font-size: 16px;
-		line-height: 160%;
-		color: #9A9CA5;
-		padding: 11px 0 12px 16px;
-		background: #FFFFFF;
-		border: 1px solid #D7DADD;
-		border-radius: 4px;
-		max-height: 44px;
-	}
-
-	input:focus {
-		border: 1px solid rgba(255, 63, 58, 0.4);
-		box-shadow: 0px 80px 80px -20px rgba(255, 63, 58, 0.08), 0px 30px 24px -10px rgba(255, 63, 58, 0.05), 0px 12px 10px -6px rgba(255, 63, 58, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
-	}
-
-	span {
-		font-family: 'Lato';
-		font-style: normal;
-		font-weight: 400;
+	label {
 		font-size: 16px;
 		line-height: 160%;
 		color: #424551;
+		@extend %Lato400;
 	}
 }
 
@@ -129,25 +109,45 @@ h2 {
 	position: absolute;
 	bottom: -18px;
 	left: 0;
-	font-family: 'Lato';
-	font-style: normal;
-	font-weight: 400;
 	font-size: 12px;
 	line-height: 150%;
 	color: #03CEA4;
-	display: none;
+	@extend %Lato400;
 }
 
 .danger-message {
 	position: absolute;
 	bottom: -18px;
 	left: 0;
-	font-family: 'Lato';
-	font-style: normal;
-	font-weight: 400;
 	font-size: 12px;
 	line-height: 150%;
 	color: #FF4242;
-	display: none;
+	@extend %Lato400;
 }
 
+
+
+.input {
+	font-size: 16px;
+	line-height: 160%;
+	color: #9A9CA5;
+	padding: 11px 0 12px 16px;
+	background: #FFFFFF;
+	// border: 1px solid #D7DADD;
+	border-radius: 4px;
+	max-height: 44px;
+	@extend %Lato400;
+}
+
+.input-default {
+	border: 1px solid #D7DADD;
+}
+
+.input-error {
+	border: 1px solid red;
+}
+
+.input-default:focus {
+	border: 1px solid rgba(255, 63, 58, 0.4);
+	box-shadow: 0px 80px 80px -20px rgba(255, 63, 58, 0.08), 0px 30px 24px -10px rgba(255, 63, 58, 0.05), 0px 12px 10px -6px rgba(255, 63, 58, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+}

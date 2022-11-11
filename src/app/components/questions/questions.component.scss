@@ -1,8 +1,7 @@
 @import '../../../styles.scss';
 
 .questions {
-
-    margin: 0 0 180px 0;
+    margin-bottom: 180px;
 
     &__row {
         display: flex;
@@ -47,21 +46,17 @@
     }
 
     &__name {
-        // font-family: 'Lato';
-        // font-style: normal;
-        // font-weight: 400;
         font-size: 16px;
         line-height: 160%;
         color: #424551;
         @extend %Lato400;
-
     }
 }
 
 .agreement {
     display: flex;
     gap: 50px;
-    margin: 48px 0 0 0;
+    margin-top: 48px;
 
     @media (max-width: 480px) {
         flex-direction: column;
@@ -72,19 +67,17 @@
         display: flex;
         align-items: baseline;
         gap: 12px;
-        // font-family: 'Lato';
-        // font-style: normal;
-        // font-weight: 400;
         font-size: 16px;
         line-height: 160%;
         color: #424551;
         @extend %Lato400;
-
     }
 
     &__info button {
-        display: inline-block;
-        background: transparent;
+        // display: inline-block;
+        // background: transparent;
+        width: 16px;
+        height: 16px;
     }
 
     &__submit {
@@ -93,9 +86,6 @@
 
     &__submit button{      
         width: 100%;
-        // font-family: 'Lato';
-        // font-style: normal;
-        // font-weight: 700;
         font-size: 16px;
         line-height: 52px;
         display: flex;

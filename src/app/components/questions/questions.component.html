@@ -9,38 +9,43 @@
                 <h2>Drop us a line</h2>
                 <div class="questions-form">
                     <div class="questions-form__row">
-                        <div class="form-input-default">
-                            <span>First Name*</span>
-                            <input type="text" placeholder="Your first name">
+                        <div class="form-item">
+                            <label>First Name*</label>
+                            <input class="input input-default" type="text" placeholder="Your first name">
                         </div>
-                        <div class="form-input-default">
-                            <span>Last  Name*</span>
-                            <input type="text" placeholder="Your last name">
-                        </div>
-                    </div>
-                    <div class="questions-form__row">
-                        <div class="form-input-default">
-                            <span>Email*</span>
-                            <input type="text" placeholder="Your working email">
-                        </div>
-                        <div class="form-input-default">
-                            <span>Phone</span>
-                            <input type="text" placeholder="Your phone number">
+                        <div class="form-item">
+                            <label>Last  Name*</label>
+                            <input class="input input-default" type="text" placeholder="Your last name">
                         </div>
                     </div>
                     <div class="questions-form__row">
-                        <div class="form-input-default">
-                            <span>Message*</span>
-                            <input type="text" placeholder="Your message">
+                        <div class="form-item">
+                            <label>Email*</label>
+                            <input class="input input-default" type="text" placeholder="Your working email">
+                        </div>
+                        <div class="form-item">
+                            <label>Phone</label>
+                            <input class="input input-default" type="text" placeholder="Your phone number">
+                        </div>
+                    </div>
+                    <div class="questions-form__row">
+                        <div class="form-item">
+                            <label>Message*</label>
+                            <input class="input input-default" type="text" placeholder="Your message">
                         </div>
                     </div>
                 </div>
                 <div class="agreement">
                     <div class="agreement__info">
-                        <button (click)="isAgree = !isAgree" >
-                            <img *ngIf="isAgree" src="assets/images/questions/checked.svg" alt="checkbox check">
-                            <img *ngIf="!isAgree" src="assets/images/questions/unchecked.svg" alt="checkbox uncheck">
+                        <button (click)="isAgree = !isAgree">
+                            <img [src]="isAgree 
+                                    ? 'assets/images/questions/checked.svg' 
+                                    : 'assets/images/questions/unchecked.svg'" [alt]="isAgree 
+                                    ? 'checkbox check' 
+                                    : 'checkbox uncheck'">
                         </button>
+
+    
                         I agree to receive communications from Createx Online School
                     </div>
                     <div class="agreement__submit">
