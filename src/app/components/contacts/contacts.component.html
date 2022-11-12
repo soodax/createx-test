@@ -46,43 +46,15 @@
                     </div>
                 </div>
                 <h3>Follow us:</h3>
-                <div class="socials">
-                    <a href="#">
-                        <img src="assets/images/contacts/Facebook.svg" alt="Facebook icon">
+                <div *ngIf="socialsArray" class="socials">
+                    <a href="#" *ngFor="let social of socialsArray | slice:0:10">
+                        <img [src]="social.src" [alt]="social.alt">
                     </a>
-                    <a href="#">
-                        <img src="assets/images/contacts/Twitter.svg" alt="Twitter icon">
-                    </a>
-                    <a href="#">
-                        <img src="assets/images/contacts/YouTube.svg" alt="YouTube icon">
-                    </a>
-                    <a href="#">
-                        <img src="assets/images/contacts/telegram.svg" alt="telegram icon">
-                    </a>
-                    <a href="#">
-                        <img src="assets/images/contacts/Instagram.svg" alt="Instagram icon">
-                    </a>
-                    <a href="#">
-                        <img src="assets/images/contacts/Linked-In.svg" alt="Linked-In icon">
-                    </a>
-                    
-                </div>
+                </div>            
             </div>
             <div class="contacts__map">
                 <div id="map"></div>
             </div>
         </div>
     </div>
-
 </section>
-
-
-<!-- <script type="text/javascript">
-    ymaps.ready(init);
-    function init(){
-        var myMap = new ymaps.Map("map", {
-            center: [55.76, 37.64],
-            zoom: 7
-        });
-    }
-</script> -->

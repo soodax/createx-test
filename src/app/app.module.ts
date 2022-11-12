@@ -23,6 +23,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     NotFoundComponent,
     SignInComponent,
     SignUpComponent,
+
   ],
   imports: [
     BrowserModule,
