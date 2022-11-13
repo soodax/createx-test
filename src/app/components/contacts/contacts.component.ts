@@ -2,6 +2,12 @@ import { Component, Input, OnInit } from "@angular/core";
 
 declare let ymaps:any;
 
+interface ISocialsArray {
+  name: string
+  src: string
+  alt: string
+}
+
 @Component({
     selector: 'app-contacts',
     templateUrl: './contacts.component.html',
@@ -10,7 +16,7 @@ declare let ymaps:any;
 
 export class ContactsComponent {
 
-  socialsArray = [
+  socialsArray: ISocialsArray[] = [
     {
       name: 'Facebook', 
       src: 'assets/images/contacts/Facebook.svg',
