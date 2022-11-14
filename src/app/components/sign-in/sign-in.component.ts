@@ -5,6 +5,7 @@ import {
 } from '@angular/core';
 import { passwordToggler } from 'src/app/data/togglers';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { socialsArray } from 'src/app/data/store';
 
 @Component({
   selector: 'app-sign-in',
@@ -13,6 +14,8 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 })
 
 export class SignInComponent {
+  socialsArray = socialsArray
+
   //Валидация форм
   signInForm: FormGroup
   submitted = false

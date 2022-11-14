@@ -60,11 +60,11 @@
         </form>
         <div class="sign-in__socials">
             <span>Or sign in with</span>
-            <div class="sign-in__icons">
-                <img src="assets/images/contacts/Facebook.svg" alt="Facebook icon">
-                <img src="assets/images/sign-in/Google.svg" alt="Google icon">
-                <img src="assets/images/contacts/Twitter.svg" alt="Twitter icon">
-                <img src="assets/images/contacts/Linked-In.svg" alt="Linked-In icon">
+            <div *ngIf="socialsArray" class="sign-in__icons">
+                <a [class]="socialsArray[0].name" class="link-item" href="#"></a>
+                <a [class]="socialsArray[6].name" class="link-item" href="#"></a>
+                <a [class]="socialsArray[1].name" class="link-item" href="#"></a>
+                <a [class]="socialsArray[5].name" class="link-item" href="#"></a>
             </div>
         </div>
         <a class="sign-in__close" routerLink="/">

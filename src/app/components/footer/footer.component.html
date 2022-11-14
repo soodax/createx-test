@@ -10,25 +10,8 @@
                     to online learning, internships and employment in the <br>
                     largest companies in the country. 
                 </p>
-                <div class="footer__socials">
-                    <a href="#">
-                        <img src="assets/images/contacts/Facebook.svg" alt="Facebook icon">
-                    </a>
-                    <a href="#">
-                        <img src="assets/images/contacts/Twitter.svg" alt="Twitter icon">
-                    </a>
-                    <a href="#">
-                        <img src="assets/images/contacts/YouTube.svg" alt="YouTube icon">
-                    </a>
-                    <a href="#">
-                        <img src="assets/images/contacts/telegram.svg" alt="telegram icon">
-                    </a>
-                    <a href="#">
-                        <img src="assets/images/contacts/Instagram.svg" alt="Instagram icon">
-                    </a>
-                    <a href="#">
-                        <img src="assets/images/contacts/Linked-In.svg" alt="Linked-In icon">
-                    </a>
+                <div *ngIf="socialsArray" class="footer__socials">
+                    <a *ngFor="let social of socialsArray | slice:0:6" [class]="social.name" class="link-item" href="#"></a>
                 </div>
             </div>
             <div class="footer__list">
@@ -55,12 +38,12 @@
                 <span>CONTACT US</span>
                 <ul>
                     <li>
-                        <img src="assets/images/footer/iPhone.svg" alt="phone icon">
-                        <a href="tel:+14055550128">(405) 555-0128</a> 
+                        <img [src]="contactsArray[1].iconWhite" [alt]="contactsArray[1].alt">
+                        <a [href]="contactsArray[1].link">{{contactsArray[1].value}}</a> 
                     </li>
                     <li> 
-                        <img src="assets/images/footer/Mail.svg" alt="email icon">
-                        <a href="mailto:hello@createx.com">hello@createx.com</a> 
+                        <img [src]="contactsArray[0].iconWhite" [alt]="contactsArray[0].alt">
+                        <a [href]="contactsArray[0].link">{{contactsArray[0].value}}</a> 
                     </li>
                 </ul>
             </div>

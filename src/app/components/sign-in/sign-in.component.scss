@@ -122,10 +122,12 @@
         display: flex;
         gap: 12px;
 
-        img {
+        a img {
             width: 20px;
             height: 20px;
         }
+
+        
     }
 
     &__close {

@@ -4,52 +4,24 @@
             <div class="contacts__info">
                 <h3>Contact info</h3>
                 <h2>Get in touch</h2>
-                <div class="contacts__list">
-                    <div class="contacts__item">
+                <div *ngIf="contactsArray" class="contacts__list">
+                    <div *ngFor="let item of contactsArray" class="contacts__item">
                         <div class="contacts__icon">
-                            <img src="assets/images/contacts/Chat.svg" alt="">
+                            <img [src]="item.iconOrange" [alt]="item.alt">
                         </div>
                         <div class="contacts__block">
                             <div class="contacts__method">
-                                Talk to us:
+                                {{item.name}}
                             </div>
-                            <a href="mailto:hello@createx.com" class="contacts__main">
-                                hello@createx.com
-                            </a>
-                        </div>
-                    </div>
-                    <div class="contacts__item">
-                        <div class="contacts__icon">
-                            <img src="assets/images/contacts/iPhone.svg" alt="">
-                        </div>
-                        <div class="contacts__block">
-                            <div class="contacts__method">
-                                Call us:
-                            </div>
-                            <a href="tel:+14055550128" class="contacts__main">
-                                (405) 555-0128
-                            </a>
-                        </div>
-                    </div>
-                    <div class="contacts__item">
-                        <div class="contacts__icon">
-                            <img src="assets/images/contacts/outline.svg" alt="">
-                        </div>
-                        <div class="contacts__block">
-                            <div class="contacts__method">
-                                Address:
-                            </div>
-                            <a class="contacts__main">
-                                2464 Royal Ln. Mesa, New Jersey 45463, USA
+                            <a [href]="item.link" class="contacts__main">
+                                {{item.value}}
                             </a>
                         </div>
                     </div>
                 </div>
                 <h3>Follow us:</h3>
                 <div *ngIf="socialsArray" class="socials">
-                    <a href="#" *ngFor="let social of socialsArray | slice:0:10">
-                        <img [src]="social.src" [alt]="social.alt">
-                    </a>
+                    <a  [class]="social.name" class="link-item" href="#" *ngFor="let social of socialsArray | slice:0:10"></a>
                 </div>            
             </div>
             <div class="contacts__map">

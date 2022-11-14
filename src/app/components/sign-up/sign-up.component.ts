@@ -5,12 +5,17 @@ import {
   Validators,
   FormBuilder,
 } from '@angular/forms';
+import { socialsArray } from 'src/app/data/store';
+
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.scss'],
 })
+
 export class SignUpComponent implements OnInit {
+  socialsArray = socialsArray
+  
   //Поля для видимости пароля\rememberMe
   isRememberMe = true;
   isPasswordHidden = true;
