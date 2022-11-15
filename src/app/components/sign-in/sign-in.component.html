@@ -20,12 +20,12 @@
             </div>
             <div class="form-item">
                 <label for="password">Password</label>
-                <input formControlName="password" #passwordInputRef type="password" 
+                <input formControlName="password" #passwordInputRef [type]="inputType" 
                     placeholder="Your password"
                     class="input"
                     [ngClass]="{'input-error': submitted && signInForm.controls.password.errors, 'input-default': !signInForm.controls.password.errors || !submitted}">
                 <button (click)="toggleHidden()" class="password-access-btn">
-                    <img [src]="passwordIcon" [alt]="passwordAlt">
+                    <img [src]="passwordIcon">
                 </button>
                 <div class="danger-message" *ngIf="submitted && signInForm.controls.password.errors?.required || submitted && signInForm.controls.password.errors">
                     Please provide a valid input.

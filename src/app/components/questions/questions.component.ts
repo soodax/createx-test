@@ -1,5 +1,4 @@
-import { Component, ElementRef, ViewChild } from "@angular/core";
-import { checkboxToggler } from "src/app/data/togglers";
+import { Component } from "@angular/core";
 
 @Component({
     selector: 'app-questions',
@@ -8,17 +7,16 @@ import { checkboxToggler } from "src/app/data/togglers";
 })
 
 export class QuestionsComponent {
-    checkboxIcon: string = 'assets/images/questions/checked.svg'
-    checkboxAlt: string = 'checkbox check'
+    checkboxIcon = 'assets/images/questions/checked.svg'
+    checkboxAlt = 'checkbox check'
     isAgree = true
 
     ngOnInit() : void{
     }
 
     checkboxToggle() {   
-        const result = checkboxToggler(this.isAgree)
-        this.isAgree = result.value
-        this.checkboxIcon = result.src
-        this.checkboxAlt = result.alt
-    }
+        this.isAgree = !this.isAgree
+        this.isAgree ? this.checkboxIcon = 'assets/images/questions/checked.svg' : this.checkboxIcon = 'assets/images/questions/unchecked.svg'
+        this.isAgree ? this.checkboxAlt = 'checkbox check' : this.checkboxAlt = 'checkbox uncheck'
+      }
 }
