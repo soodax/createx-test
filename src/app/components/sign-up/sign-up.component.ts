@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
-import { passwordToggler } from 'src/app/data/togglers';
+import { passwordToggler, checkboxToggler } from 'src/app/data/togglers';
 import {
   FormGroup,
   Validators,
@@ -14,11 +14,29 @@ import { socialsArray } from 'src/app/data/store';
 })
 
 export class SignUpComponent implements OnInit {
-  socialsArray = socialsArray
+
+  constructor(private formBuilder: FormBuilder) {}
+
+  socialsArray = socialsArray.filter(el => 
+    el.name === 'facebook' || 
+    el.name === 'google' || 
+    el.name === 'twitter' || 
+    el.name === 'linked-in'
+  )
+
+  //Базовые иконки
+  checkboxIcon: string = 'assets/images/questions/checked.svg'
+  checkboxAlt: string = 'checkbox check'
+  passwordIcon: string = 'assets/images/Eye.svg'
+  passwordAlt: string = 'show password'
   
   //Поля для видимости пароля\rememberMe
   isRememberMe = true;
   isPasswordHidden = true;
+
+  //Валидация форм
+  signUpForm: FormGroup;
+  submitted = false;
 
   //Получаем ref дочернего элемента
   @ViewChild('nameInputRef') nameInputRef: ElementRef<HTMLInputElement>;
@@ -30,20 +48,30 @@ export class SignUpComponent implements OnInit {
 
   //Метод для переключения фидимости пароля
   toggleHidden() {
-    this.isPasswordHidden = passwordToggler(
+    console.log(this.isPasswordHidden)
+    console.log(this.passwordIcon)
+    console.log(this.passwordAlt)
+    const result = passwordToggler(
       [
         this.passwordInputRef1.nativeElement,
         this.passwordInputRef2.nativeElement,
       ],
       this.isPasswordHidden
     );
+    this.isPasswordHidden = result.value
+    this.passwordIcon = result.src
+    this.passwordAlt = result.alt
+    console.log(this.isPasswordHidden)
+    console.log(this.passwordIcon)
+    console.log(this.passwordAlt)
   }
 
-  //Валидация форм
-  signUpForm: FormGroup;
-  submitted = false;
-
-  constructor(private formBuilder: FormBuilder) {}
+  checkboxToggle() {   
+    const result = checkboxToggler(this.isRememberMe)
+    this.isRememberMe = result.value
+    this.checkboxIcon = result.src
+    this.checkboxAlt = result.alt
+  }
 
   ngOnInit(): void {
     this.signUpForm = this.formBuilder.group({

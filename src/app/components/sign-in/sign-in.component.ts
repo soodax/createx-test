@@ -1,9 +1,11 @@
 import {
   Component, 
   ViewChild, 
-  ElementRef,  
+  ElementRef,
+  ViewChildren,
+  QueryList,  
 } from '@angular/core';
-import { passwordToggler } from 'src/app/data/togglers';
+import { passwordToggler, checkboxToggler } from 'src/app/data/togglers';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { socialsArray } from 'src/app/data/store';
 
@@ -14,11 +16,28 @@ import { socialsArray } from 'src/app/data/store';
 })
 
 export class SignInComponent {
-  socialsArray = socialsArray
+  socialsArray = socialsArray.filter(el => 
+    el.name === 'facebook' || 
+    el.name === 'google' || 
+    el.name === 'twitter' || 
+    el.name === 'linked-in'
+  )
+
+  // @ViewChildren("input") inputArray: QueryList<any>
+
+  //Базовые иконки
+  checkboxIcon: string = 'assets/images/questions/checked.svg'
+  checkboxAlt: string = 'checkbox check'
+  passwordIcon: string = 'assets/images/Eye.svg'
+  passwordAlt: string = 'show password'
 
   //Валидация форм
   signInForm: FormGroup
   submitted = false
+
+  //Поля для видимости пароля\KeepMe
+  isKeepMe = true
+  isPasswordHidden = true
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -27,7 +46,17 @@ export class SignInComponent {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(4)]]
     })
+    
   }
+
+  // ngAfterViewInit() {}
+
+  checkboxToggle() {   
+    const result = checkboxToggler(this.isKeepMe)
+    this.isKeepMe = result.value
+    this.checkboxIcon = result.src
+    this.checkboxAlt = result.alt
+}
 
   onSubmit() {
     this.submitted = true
@@ -40,16 +69,20 @@ export class SignInComponent {
     alert('Validation pass!')
   }
   
-  //Поля для видимости пароля\KeepMe
-  isKeepMe = true
-  isPasswordHidden = true
-
   //Получаем ref дочернего элемента
   @ViewChild('passwordInputRef') passwordInputRef: ElementRef<HTMLInputElement>
   @ViewChild('emailInputRef') emailInputRef: ElementRef<HTMLInputElement>
 
   //Метод переключения видимости
   toggleHidden() {
-    this.isPasswordHidden = passwordToggler([this.passwordInputRef.nativeElement], this.isPasswordHidden)
+    const result = passwordToggler(
+      [
+        this.passwordInputRef.nativeElement,
+      ],
+      this.isPasswordHidden
+    );
+    this.isPasswordHidden = result.value
+    this.passwordIcon = result.src
+    this.passwordAlt = result.alt
   }
 }

@@ -37,12 +37,8 @@
                 </div>
                 <div class="agreement">
                     <div class="agreement__info">
-                        <button (click)="isAgree = !isAgree">
-                            <img [src]="isAgree 
-                                    ? 'assets/images/questions/checked.svg' 
-                                    : 'assets/images/questions/unchecked.svg'" [alt]="isAgree 
-                                    ? 'checkbox check' 
-                                    : 'checkbox uncheck'">
+                        <button (click)="checkboxToggle()">
+                            <img [src]="checkboxIcon" [alt]="checkboxAlt">
                         </button>
 
     

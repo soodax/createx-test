@@ -25,11 +25,7 @@
                     class="input"
                     [ngClass]="{'input-error': submitted && signInForm.controls.password.errors, 'input-default': !signInForm.controls.password.errors || !submitted}">
                 <button (click)="toggleHidden()" class="password-access-btn">
-                    <img [src]="isPasswordHidden 
-                                ? 'assets/images/Eye.svg' 
-                                : 'assets/images/Closed-Eye.svg'" [alt]="isPasswordHidden 
-                                ? 'show password' 
-                                : 'hide password'">
+                    <img [src]="passwordIcon" [alt]="passwordAlt">
                 </button>
                 <div class="danger-message" *ngIf="submitted && signInForm.controls.password.errors?.required || submitted && signInForm.controls.password.errors">
                     Please provide a valid input.
@@ -40,12 +36,8 @@
             </div>
             <div class="sign-in__settings">
                 <div class="sign-in__keep">
-                    <button (click)="isKeepMe = !isKeepMe">
-                        <img [src]="isKeepMe 
-                                ? 'assets/images/questions/checked.svg' 
-                                : 'assets/images/questions/unchecked.svg'" [alt]="isKeepMe 
-                                ? 'checkbox check' 
-                                : 'checkbox uncheck'">
+                    <button (click)="checkboxToggle()">
+                        <img [src]="checkboxIcon" [alt]="checkboxAlt">
                     </button>
                     <span>Keep me signed in</span>
                 </div>
@@ -61,10 +53,7 @@
         <div class="sign-in__socials">
             <span>Or sign in with</span>
             <div *ngIf="socialsArray" class="sign-in__icons">
-                <a [class]="socialsArray[0].name" class="link-item" href="#"></a>
-                <a [class]="socialsArray[6].name" class="link-item" href="#"></a>
-                <a [class]="socialsArray[1].name" class="link-item" href="#"></a>
-                <a [class]="socialsArray[5].name" class="link-item" href="#"></a>
+                <a *ngFor="let social of socialsArray" [class]="social.name" class="link-item" href="#"></a>
             </div>
         </div>
         <a class="sign-in__close" routerLink="/">
