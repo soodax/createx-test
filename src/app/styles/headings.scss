@@ -1,0 +1,31 @@
+//Заголовки
+h6 {
+	font-size: 16px;
+	line-height: 150%;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: #1E212C;
+	@extend %Lato700;
+}
+
+h3 {
+	font-size: 28px;
+	line-height: 150%;
+	color: #1E212C;
+	@extend %Lato700;
+}
+
+h2 {
+	font-size: 32px;
+	line-height: 130%;
+	color: #1E212C;
+	@extend %Lato900;
+}
+
+h1 {
+	font-size: 46px;
+	line-height: 130%;
+	color: #1E212C;
+	margin: 8px 0 40px 0;
+	@extend %Lato900;
+}

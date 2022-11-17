@@ -1,0 +1,88 @@
+<section class="blog">
+    <div class="container">
+        <div class="blog__main">
+            <div class="article">
+                <div class="article__chapter">
+                    <span class="article__type">
+                        <mat-icon class="interface-icon" svgIcon="article-icon"></mat-icon>
+                        Article
+                    </span>
+                    <span class="divider"></span>
+                    <span class="article__theme">
+                        HR & Recruting
+                    </span>
+                </div>
+                <h1>HR statistics: job search,  interviews, hiring and recruiting</h1>
+                <div class="article__markers">
+                    <div class="article__period">
+                        <span class="article__date">
+                            <mat-icon class="interface-icon" svgIcon="calendar-icon"></mat-icon>
+                            August 3, 2020
+                        </span>
+                        <span class="article__time">
+                            <mat-icon class="interface-icon" svgIcon="clock-icon"></mat-icon>
+                            4 min read
+                        </span>
+                    </div>
+                    <div class="article__socials">
+                        <span>Share:</span> 
+                        <a *ngFor="let social of socialsArray">
+                            <mat-icon class="social-icon-small" [svgIcon]="social.name + '-icon'"></mat-icon>
+                        </a>
+                    </div>
+                </div>
+                <div class="article__image">
+                    <img src="assets/images/single-post/pic.png" alt="accessories on the table">
+                </div>
+                <div class="article__paragraphs">
+                    <p class="article__paragraph_main">
+                        Vulputate vitae pellentesque scelerisque luctus consequat mattis pellentesque dui odio. Interdum aenean sit malesuada ornare sed gravida rhoncus, congue. Purus auctor nullam diam quis est hendrerit ac euismod. 
+                    </p>
+                    <p class="article__paragraph">
+                        At facilisi sapien posuere eget nunc senectus proin nullam. Tortor senectus in et sagittis, vitae diam cras dignissim. Varius adipiscing eget diam nisi. Orci, consectetur vulputate metus ornare pharetra, neque, fermentum. Vel nec rhoncus, non nunc, neque in massa. Feugiat leo nam nisl lacinia amet, odio. Mi varius viverra risus vel.
+                    </p>
+                    <p class="article__paragraph">
+                        Amet, morbi sed pharetra, elit eget mi potenti. Condimentum orci interdum feugiat lectus libero duis. Nisl massa, elementum varius sit. Nunc felis, porttitor aliquam urna, accumsan et sed. Aliquet non sed duis diam vehicula rhoncus. In dictum nullam tincidunt semper pellentesque purus morbi sed. Ut aliquet velit pharetra, nisi nunc, non.
+                    </p>
+                    <div class="quotation">
+                        <div class="quotation__brace">
+                            <img src="assets/images/braces.svg" alt="">
+                        </div>
+                        <div class="quotation__main">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Justo, amet lectus quam viverra mus lobortis fermentum amet, eu. Pulvinar eu sed purus  facilisi. Vitae id turpis tempus ornare turpis quis non. Congue tortor in tot euismod vulputate etiam eros. Vel accumsan at elit neque, ipsum.
+                        </div>
+                    </div>
+                    <p class="article__paragraph">
+                        Mauris amet arcu nisl vel dictum tellus. Sed rhoncus, ut sed id ut erat mattis. Vitae mus blandit in neque amet non fringilla blandit:
+                    </p>
+                    <ul class="check-list">
+                        <li class="check-list__item">A fermentum in morbi pretium aliquam adipiscing donec tempus.</li>
+                        <li class="check-list__item">Vulputate placerat amet pulvinar lorem nisl.</li>
+                        <li class="check-list__item">Consequat feugiat habitant gravida quisque elit bibendum id adipiscing sed.</li>
+                        <li class="check-list__item">Etiam duis lobortis in fames ultrices commodo nibh.</li>
+                    </ul>
+                    <p class="article__paragraph">
+                        Enim, vel massa odio diam. Blandit massa gravida feugiat elementum id nec sed leo. Nisi in ornare lectus eget. Urna, risus, consectetur volutpat lorem purus. Velit aliquet nibh vitae maecenas. Consectetur neque ut aliquam eros, purus enim dignissim aenean vitae. Ultrices fames augue mattis tortor est justo, pharetra nibh risus. Facilisi at porttitor volutpat natoque proin amet, nulla. Vivamus ut lobortis sagittis curabitur tellus convallis eget netus vitae.
+                    </p>
+                    <div class="article__info">
+                        <div class="article__tags">
+                            <span>Tags:</span>
+                            <a href="#" class="tags__tag">#learning</a>
+                            <a href="#" class="tags__tag">#HR</a>
+                            <a href="#" class="tags__tag">#self-development</a>
+                        </div>
+                        <div class="article__socials">
+                            <span>Share:</span> 
+                            <a *ngFor="let social of socialsArray">
+                                <mat-icon class="social-icon-small" [svgIcon]="social.name + '-icon'"></mat-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+            <app-sidebar></app-sidebar>
+        </div>
+    </div>
+</section>
+<app-newsletter></app-newsletter>
+<app-our-blog></app-our-blog>

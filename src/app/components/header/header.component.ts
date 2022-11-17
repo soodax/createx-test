@@ -1,5 +1,7 @@
-import { Component, Input, Output, ViewChild, EventEmitter } from "@angular/core";
+import { Component } from "@angular/core";
 import { SignUpComponent } from "../sign-up/sign-up.component";
+import { MatDialog } from '@angular/material/dialog';
+import { SignInComponent } from "../sign-in/sign-in.component";
 
 
 @Component({
@@ -9,9 +11,28 @@ import { SignUpComponent } from "../sign-up/sign-up.component";
 })
 
 export class HeaderComponent {
-    
-    // toggle() {
-    //     this.modal = !this.modal
-    // }
-   
+
+    constructor(public dialog: MatDialog) {}
+
+    openDialog(form: string, enterAnimationDuration: string, exitAnimationDuration: string) {
+
+        switch (form) {
+            case 'sign-in':
+                this.dialog.open(
+                    SignInComponent, {
+                    enterAnimationDuration,
+                    exitAnimationDuration,
+                })
+                break;
+            case 'sign-up':
+                this.dialog.open(
+                    SignUpComponent, {
+                    enterAnimationDuration,
+                    exitAnimationDuration,
+                })
+                break;
+            default:
+                alert('error')
+        }
+    }
 }

@@ -5,6 +5,8 @@ import {
   FormBuilder,
 } from '@angular/forms';
 import { socialsArray } from 'src/app/data/store';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material/icon';
 
 @Component({
   selector: 'app-sign-up',
@@ -14,14 +16,27 @@ import { socialsArray } from 'src/app/data/store';
 
 export class SignUpComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder) {}
-
   socialsArray = socialsArray.filter(el => 
     el.name === 'facebook' || 
     el.name === 'google' || 
     el.name === 'twitter' || 
     el.name === 'linked-in'
   )
+
+  constructor(
+    private formBuilder: FormBuilder, 
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer
+  ) {
+    for (let i = 0; i < this.socialsArray.length; i++) {
+      this.matIconRegistry.addSvgIcon(
+        `${this.socialsArray[i].name}-icon`,
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+          this.socialsArray[i].src
+        )
+      );  
+    }
+  }
 
   //Базовые иконки
   checkboxIcon = 'assets/images/questions/checked.svg'

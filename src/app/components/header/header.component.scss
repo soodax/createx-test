@@ -59,7 +59,7 @@
     display: flex;
     align-items: center;
 
-    &__consultation a {
+    &__consultation button {
         display: flex;
         background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
         border-radius: 4px;
@@ -88,7 +88,8 @@
         }
     }
 
-    &__login a{
+    &__login button{
+        background: transparent;
         font-size: 16px;
         line-height: 160%;
         color: #424551;

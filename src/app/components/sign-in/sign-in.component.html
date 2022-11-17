@@ -47,17 +47,19 @@
             </div>
             <button (click)="onSubmit()" class="sign-in__button">Sign in</button>
             <div class="sign-in__register">
-                Don't have an account? <a routerLink="/sign-up">Sign up</a>
+                Don't have an account? <a>Sign up</a>
             </div>
         </form>
         <div class="sign-in__socials">
             <span>Or sign in with</span>
             <div *ngIf="socialsArray" class="sign-in__icons">
-                <a *ngFor="let social of socialsArray" [class]="social.name" class="link-item" href="#"></a>
+                <a *ngFor="let social of socialsArray">
+                    <mat-icon class="social-icon-small" [svgIcon]="social.name + '-icon'"></mat-icon>
+                </a>
             </div>
         </div>
-        <a class="sign-in__close" routerLink="/">
+        <button mat-button mat-dialog-close class="btn-close">
             <img src="assets/images/sign-in/Cross.svg" alt="close button">
-        </a>
+        </button>
     </div>
 </div>

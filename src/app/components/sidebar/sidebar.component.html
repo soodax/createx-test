@@ -1,0 +1,50 @@
+<aside class="sidebar">
+    <div class="sidebar__search">
+        <input class="input input-default" type="text" placeholder="Search blog...">
+        <button class="sidebar__submit">
+            <mat-icon class="interface-icon" svgIcon="search-icon"></mat-icon>
+        </button>
+    </div>
+    <div class="author">
+        <h6>Author</h6>
+        <div class="author__main">
+            <div class="author__photo">
+                <img src="assets/images/sidebar/author/photo.png" alt="author photo">
+            </div>
+            <div class="author__info">
+                <div class="author__name">Kristin Watson</div>
+                <div class="author__prof">Curator of Marketing Course</div>
+                <div class="author__socials">
+                    <a *ngFor="let social of socialsArray">
+                        <mat-icon class="social-icon-small" [svgIcon]="social.name + '-icon'"></mat-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="trending">
+        <h6>Trending Articles</h6>
+        <div *ngFor="let trend of trendingArray" class="trending__main">
+            <div class="trending__image">
+                <img [src]="trend.image" [alt]="trend.alt">
+            </div>
+            <div class="trending__info">
+                <div class="trending__date">
+                    <mat-icon class="interface-icon" svgIcon="calendar-icon"></mat-icon>
+                    {{trend.date}}
+                </div>
+                <a href="#" class="trending__link">
+                    {{trend.title}}
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="tags">
+        <h6>Tags</h6>
+        <div class="tags__main">
+            <a href="#" *ngFor="let tag of tagsArray" class="tags__tag">
+                {{tag}}
+            </a>
+        </div>
+    </div>
+</aside>

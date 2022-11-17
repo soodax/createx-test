@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { socialsArray, contactsArray } from '../../data/store'
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material/icon';
 
 declare let ymaps:any;
 
@@ -15,6 +17,20 @@ export class ContactsComponent {
   contactsArray = contactsArray
       
   public map :any;
+
+  constructor(
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer
+  ) {
+    for (let i = 0; i < 6; i++) {
+      this.matIconRegistry.addSvgIcon(
+        `${socialsArray[i].name}-icon`,
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+          socialsArray[i].src
+        )
+      );  
+    }   
+  }
 
   ngOnInit() {
     ymaps.ready().then(() => {

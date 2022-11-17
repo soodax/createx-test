@@ -1,0 +1,90 @@
+@import '../../../../styles.scss';
+
+.recommend {
+
+    &__nav {
+    }
+
+    &__row {
+        display: flex;
+        gap: 30px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+    }
+
+    &__col {
+        flex: 1 1 33.333%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__image {
+        img {
+            cursor: pointer;
+            width: 100%;
+            filter: blur(8px);
+        }
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+    }
+
+    &__marker {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        font-size: 14px;
+        line-height: 150%;
+        color: #787A80;
+        border-left: 1px solid #787A80;
+        padding-left: 12px;
+        @extend %Lato400;
+    }
+
+    &__theme {
+        font-size: 14px;
+        line-height: 150%;
+        color: #787A80;
+        margin-right: 12px;
+        @extend %Lato700;
+    }
+
+    &__title {
+        font-size: 20px;
+        line-height: 150%;
+        color: #1E212C;
+        @extend %Lato700;
+    }
+
+    &__fragment {
+        font-size: 16px;
+        line-height: 160%;
+        color: #424551;
+        @extend %Lato400;
+    }
+
+    &__action {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+        line-height: 160%;
+        color: #1E212C;
+        background: transparent;
+        @extend %Lato700;
+        
+    }
+
+    &__more {
+        margin: 80px 0 185px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+}

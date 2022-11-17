@@ -1,0 +1,28 @@
+.button {
+	font-size: 16px;
+	line-height: 52px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	letter-spacing: 0.5px;
+	color: #FFFFFF;
+	background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
+	border-radius: 4px;
+	padding: 0px 40px;
+	@extend %Lato700;
+}
+
+.password-access-btn {
+	position: absolute;
+	bottom: 0;
+	right: 16px;
+	transform: translate(0, -50%);
+	background: transparent;
+}
+
+.btn-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: transparent;
+}

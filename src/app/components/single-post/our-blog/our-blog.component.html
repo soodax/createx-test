@@ -1,0 +1,39 @@
+<section class="recommend">
+    <div class="container">
+        <h6>Our blog</h6>
+        <h1>You may also like</h1>
+        <div class="recommend__nav"></div>
+        <div class="recommend__row">
+            <div *ngFor="let item of recommendArray | slice:0:3" class="recommend__col">
+                <div class="recommend__image">
+                    <img appColorful [src]="item.image" [alt]="item.alt">
+                </div>
+                <div class="recommend__info">
+                    <span class="recommend__theme">
+                        {{item.theme}}
+                    </span>
+                    <span class="recommend__marker">
+                        <mat-icon class="interface-icon" svgIcon="calendar-icon"></mat-icon>
+                        {{item.date}}
+                    </span>
+                </div>
+                <div class="recommend__title">
+                    {{item.title}}
+                </div>
+                <div class="recommend__fragment">
+                    {{item.fragment}}
+                </div>
+                <div>
+                    <button class="recommend__action">
+                        {{item.action}}
+                        <mat-icon svgIcon="right-icon"></mat-icon>
+                    </button>
+                </div>        
+            </div>
+        </div>
+        <div class="recommend__more">
+            <h3>Do you want more articles, podcasts and videos?</h3>
+            <button class="button">Go to blog</button>
+        </div>
+    </div>
+</section>

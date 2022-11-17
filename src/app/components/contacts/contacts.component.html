@@ -2,8 +2,8 @@
     <div class="container">
         <div class="contacts__row">
             <div class="contacts__info">
-                <h3>Contact info</h3>
-                <h2>Get in touch</h2>
+                <h6>Contact info</h6>
+                <h1>Get in touch</h1>
                 <div *ngIf="contactsArray" class="contacts__list">
                     <div *ngFor="let item of contactsArray" class="contacts__item">
                         <div class="contacts__icon">
@@ -19,9 +19,11 @@
                         </div>
                     </div>
                 </div>
-                <h3>Follow us:</h3>
+                <h6>Follow us:</h6>
                 <div *ngIf="socialsArray" class="socials">
-                    <a  [class]="social.name" class="link-item" href="#" *ngFor="let social of socialsArray | slice:0:10"></a>
+                    <a *ngFor="let social of socialsArray | slice:0:6">
+                        <mat-icon class="social-icon-default" [svgIcon]="social.name + '-icon'"></mat-icon>
+                    </a>
                 </div>            
             </div>
             <div class="contacts__map">

@@ -121,24 +121,9 @@
     &__icons {
         display: flex;
         gap: 12px;
-
-        a img {
-            width: 20px;
-            height: 20px;
-        }
-
-        
-    }
-
-    &__close {
-        position: absolute;
-        top: 24px;
-        right: 24px;
-        background: transparent;
-        
     }
 }
 
 .sign-in::-webkit-scrollbar {
     display: none;
-  }
+}
