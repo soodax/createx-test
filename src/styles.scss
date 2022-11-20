@@ -40,6 +40,7 @@ $createx-theme: mat.define-light-theme((
 @import './app/styles/icons.scss';
 @import './app/styles/inputs.scss';
 @import './app/styles/buttons.scss';
+@import './app/styles/togglers.scss';
 
 .container {
     max-width: 1230px;
@@ -118,3 +119,4 @@ $createx-theme: mat.define-light-theme((
 	background: #787A80;
 	margin: 0 12px;
 }
+

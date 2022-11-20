@@ -7,8 +7,6 @@ import { Component } from "@angular/core";
 })
 
 export class QuestionsComponent {
-    checkboxIcon = 'assets/images/questions/checked.svg'
-    checkboxAlt = 'checkbox check'
     isAgree = true
 
     ngOnInit() : void{
@@ -16,7 +14,5 @@ export class QuestionsComponent {
 
     checkboxToggle() {   
         this.isAgree = !this.isAgree
-        this.isAgree ? this.checkboxIcon = 'assets/images/questions/checked.svg' : this.checkboxIcon = 'assets/images/questions/unchecked.svg'
-        this.isAgree ? this.checkboxAlt = 'checkbox check' : this.checkboxAlt = 'checkbox uncheck'
       }
 }

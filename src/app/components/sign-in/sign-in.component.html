@@ -9,12 +9,12 @@
                 <label for="email">Email</label>
                 <input formControlName="email" type="email" 
                     class="input"
-                    [ngClass]="{'input-error': submitted && signInForm.controls.email.errors, 'input-default': !signInForm.controls.email.errors || !submitted}"
+                    [ngClass]="{'input-error': submitted && !signInForm.valid, 'input-default': !submitted}"
                     placeholder="Your working email">
-                <div class="danger-message" *ngIf="submitted && signInForm.controls.email.errors?.required || submitted && signInForm.controls.email.errors">
+                <div class="danger-message" *ngIf="submitted && !signInForm.valid">
                     Please provide a valid input.
                 </div>
-                <div class="success-message" *ngIf="submitted && !signInForm.controls.email.errors">
+                <div class="success-message" *ngIf="signInForm.valid">
                     Looks good!
                 </div>
             </div>
@@ -23,21 +23,19 @@
                 <input formControlName="password" #passwordInputRef [type]="inputType" 
                     placeholder="Your password"
                     class="input"
-                    [ngClass]="{'input-error': submitted && signInForm.controls.password.errors, 'input-default': !signInForm.controls.password.errors || !submitted}">
-                <button (click)="toggleHidden()" class="password-access-btn">
-                    <img [src]="passwordIcon">
+                    [ngClass]="{'input-error': submitted && !signInForm.valid, 'input-default': !submitted}">
+                <button class="password" (click)="toggleHidden()" [ngClass]="{'password-checked': isPasswordHidden, 'password-unchecked': !isPasswordHidden}">
                 </button>
-                <div class="danger-message" *ngIf="submitted && signInForm.controls.password.errors?.required || submitted && signInForm.controls.password.errors">
+                <div class="danger-message" *ngIf="submitted && !signInForm.valid">
                     Please provide a valid input.
                 </div>
-                <div class="success-message" *ngIf="submitted && !signInForm.controls.password.errors">
+                <div class="success-message" *ngIf="signInForm.valid">
                     Looks good!
                 </div>
             </div>
             <div class="sign-in__settings">
                 <div class="sign-in__keep">
-                    <button (click)="checkboxToggle()">
-                        <img [src]="checkboxIcon" [alt]="checkboxAlt">
+                    <button class="checkbox" (click)="checkboxToggle()" [ngClass]="{'checkbox-checked': isKeepMe, 'checkbox-unchecked': !isKeepMe}">
                     </button>
                     <span>Keep me signed in</span>
                 </div>

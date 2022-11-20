@@ -8,51 +8,48 @@
             <div class="form-item">
                 <label for="name">Full Name</label>
                 <input formControlName="name" type="text" class="input"
-                    [ngClass]="{'input-error': submitted && signUpForm.controls.name.errors, 'input-default': !signUpForm.controls.name.errors || !submitted}"
+                    [ngClass]="{'input-error': submitted && !signUpForm.valid, 'input-default': !submitted}"
                     placeholder="Your full name">
-                <div class="danger-message" *ngIf="submitted && signUpForm.controls.name.errors?.required || submitted && signUpForm.controls.name.errors">
+                <div class="danger-message" *ngIf="submitted && !signUpForm.valid">
                     Please provide a valid input.
                 </div>
-                <div class="success-message" *ngIf="submitted && !signUpForm.controls.name.errors">Looks good!</div>
+                <div class="success-message" *ngIf="signUpForm.valid">Looks good!</div>
             </div>
             <div class="form-item">
                 <label for="email">Email</label>
                 <input formControlName="email" type="email" class="input"
-                    [ngClass]="{'input-error': submitted && signUpForm.controls.email.errors, 'input-default': !signUpForm.controls.email.errors || !submitted}"
+                    [ngClass]="{'input-error': submitted && !signUpForm.valid, 'input-default': !submitted}"
                     placeholder="Your working email">
-                <div class="danger-message" *ngIf="submitted && signUpForm.controls.email.errors?.required || submitted && signUpForm.controls.email.errors ">
+                <div class="danger-message" *ngIf="submitted && !signUpForm.valid ">
                     Please provide a valid input.
                 </div>
-                <div class="success-message" *ngIf="submitted && !signUpForm.controls.email.errors">Looks good!</div>
+                <div class="success-message" *ngIf="signUpForm.valid">Looks good!</div>
             </div>
             <div class="form-item">
                 <label for="password">Password</label>
                 <input formControlName="password" #passwordInputRef1 [type]="inputType" placeholder="Your password"
                     class="input"
-                    [ngClass]="{'input-error': submitted && signUpForm.controls.password.errors, 'input-default': !signUpForm.controls.password.errors || !submitted}">
-                <button (click)="toggleHidden()" class="password-access-btn">
-                    <img [src]="passwordIcon">
+                    [ngClass]="{'input-error': submitted && !signUpForm.valid, 'input-default': !submitted}">
+                <button (click)="toggleHidden()" class="password" [ngClass]="{'password-checked': isPasswordHidden, 'password-unchecked': !isPasswordHidden}">
                 </button>
-                <div class="danger-message" *ngIf="submitted && signUpForm.controls.password.errors?.required || submitted && signUpForm.controls.password.errors">
+                <div class="danger-message" *ngIf="submitted && !signUpForm.valid">
                     Please provide a valid input.</div>
-                <div class="success-message" *ngIf="submitted && !signUpForm.controls.password.errors">Looks good!</div>
+                <div class="success-message" *ngIf="signUpForm.valid">Looks good!</div>
             </div>
             <div class="form-item">
                 <label for="password">Confirm Password</label>
                 <input formControlName="password" #passwordInputRef2 [type]="inputType" placeholder="Your password"
                     class="input"
-                    [ngClass]="{'input-error': submitted && signUpForm.controls.password.errors, 'input-default': !signUpForm.controls.password.errors || !submitted}">
-                <button (click)="toggleHidden()" class="password-access-btn">
-                    <img [src]="passwordIcon">
+                    [ngClass]="{'input-error': submitted && !signUpForm.valid, 'input-default': !submitted}">
+                <button (click)="toggleHidden()" class="password" [ngClass]="{'password-checked': isPasswordHidden, 'password-unchecked': !isPasswordHidden}">
                 </button>
-                <div class="danger-message" *ngIf="submitted && signUpForm.controls.password.errors?.required || submitted && signUpForm.controls.password.errors">
+                <div class="danger-message" *ngIf="submitted && !signUpForm.valid">
                     Please provide a valid input.</div>
-                <div class="success-message" *ngIf="submitted && !signUpForm.controls.password.errors">Looks good!</div>
+                <div class="success-message" *ngIf="signUpForm.valid">Looks good!</div>
             </div>
             <div class="sign-up__settings">
                 <div class="sign-up__keep">
-                    <button (click)="checkboxToggle()">
-                        <img [src]="checkboxIcon" [alt]="checkboxAlt">
+                    <button (click)="checkboxToggle()" class="checkbox" [ngClass]="{'checkbox-checked': isRememberMe, 'checkbox-unchecked': !isRememberMe}">
                     </button>
                     <span>Remember me</span>
                 </div>

@@ -37,9 +37,7 @@
                 </div>
                 <div class="agreement">
                     <div class="agreement__info">
-                        <button (click)="checkboxToggle()">
-                            <img [src]="checkboxIcon" [alt]="checkboxAlt">
-                        </button>  
+                        <button (click)="checkboxToggle()" class="checkbox" [ngClass]="{'checkbox-checked': isAgree, 'checkbox-unchecked': !isAgree}"></button>  
                         I agree to receive communications from Createx Online School
                     </div>
                     <div class="agreement__submit">

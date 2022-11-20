@@ -1,0 +1,31 @@
+.checkbox {
+    width: 16px;
+    height: 16px;
+}
+
+.checkbox-checked {
+    background: url(../../assets/images/questions/checked.svg) center no-repeat;
+}
+
+.checkbox-unchecked {
+    background: url(../../assets/images/questions/unchecked.svg) center no-repeat;
+}
+
+.password {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+	bottom: 0;
+	right: 16px;
+	transform: translate(0, -50%);
+    background: transparent;
+}
+
+.password-checked {
+
+    background: url(../../assets/images/Eye.svg) center no-repeat;
+}
+
+.password-unchecked {
+    background: url(../../assets/images/Closed-Eye.svg) center no-repeat;
+}

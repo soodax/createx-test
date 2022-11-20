@@ -37,11 +37,6 @@ export class SignUpComponent implements OnInit {
       );  
     }
   }
-
-  //Базовые иконки
-  checkboxIcon = 'assets/images/questions/checked.svg'
-  checkboxAlt = 'checkbox check'
-  passwordIcon = 'assets/images/Eye.svg'
   
   //Поля для видимости пароля\rememberMe
   isRememberMe = true;
@@ -61,15 +56,11 @@ export class SignUpComponent implements OnInit {
   //Метод для переключения фидимости пароля
   toggleHidden() {
     this.isPasswordHidden = !this.isPasswordHidden
-    this.isPasswordHidden ? this.inputType = 'password' : this.inputType = 'text'
-    this.isPasswordHidden ? this.passwordIcon = 'assets/images/Eye.svg' : this.passwordIcon = 'assets/images/Closed-Eye.svg'
   }
 
   //Метод для переключения чекбокса
   checkboxToggle() {   
     this.isRememberMe = !this.isRememberMe
-    this.isRememberMe ? this.checkboxIcon = 'assets/images/questions/checked.svg' : this.checkboxIcon = 'assets/images/questions/unchecked.svg'
-    this.isRememberMe ? this.checkboxAlt = 'checkbox check' : this.checkboxAlt = 'checkbox uncheck'
   }
 
   ngOnInit(): void {
