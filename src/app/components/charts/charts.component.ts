@@ -23,7 +23,7 @@ export class ChartsComponent {
       type: 'line',
       data: {
         labels: this.allCharts
-          .sort((a, b) => <any>new Date(a.dt_date) - <any>new Date(b.dt_date))
+          .sort((a, b) => new Date(a.dt_date).getTime() - new Date(b.dt_date).getTime())
           .map((el) => el.dt_date),
         datasets: [
           {
