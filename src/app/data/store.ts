@@ -55,7 +55,7 @@ export const contactsArray: IContactsArray[] = [
   },
   {
     name: 'Call us:',
-    link: 'tel:+14055550128',
+    link: 'tel:4055550128',
     value: '(405) 555-0128',
     iconOrange: 'assets/images/contacts/iPhone.svg',
     iconWhite: 'assets/images/footer/iPhone.svg',
