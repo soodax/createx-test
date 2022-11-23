@@ -1,6 +1,7 @@
 @import '../../../styles.scss';
 
 .charts {
+    overflow-x: scroll;
 
     h2 {
         text-align: center;
@@ -9,8 +10,11 @@
     &__row {
         padding: 20px 0;
         gap: 8px;
+        row-gap: 16px;
         display: flex;
-        overflow-x: scroll;
+        // overflow-x: scroll;
+        width: 3225px;
+        flex-wrap: wrap;
     }
 
     &__container {
