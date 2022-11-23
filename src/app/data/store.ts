@@ -47,7 +47,6 @@ export const socialsArray: ISocialsArray[] = [
 export const contactsArray: IContactsArray[] = [
   {
     name: 'Talk to us:',
-    link: 'mailto:hello@createx.com',
     value: 'hello@createx.com',
     iconOrange: 'assets/images/contacts/Chat.svg',
     iconWhite: 'assets/images/footer/Mail.svg',
@@ -55,15 +54,14 @@ export const contactsArray: IContactsArray[] = [
   },
   {
     name: 'Call us:',
-    link: 'tel:4055550128',
-    value: '(405) 555-0128',
+    value: '4055550128',
+    link: '(405) 555-0128',
     iconOrange: 'assets/images/contacts/iPhone.svg',
     iconWhite: 'assets/images/footer/iPhone.svg',
     alt: 'phone icon',
   },
   {
     name: 'Address:',
-    link: '',
     value: '2464 Royal Ln. Mesa, New Jersey 45463, USA',
     iconOrange: 'assets/images/contacts/outline.svg',
     alt: 'adress icon',

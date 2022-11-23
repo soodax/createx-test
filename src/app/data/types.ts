@@ -6,7 +6,7 @@ export interface ISocialsArray {
   
 export interface IContactsArray {
     name: string;
-    link: string;
+    link?: string;
     value: string;
     iconOrange?: string;
     iconWhite?: string;
