@@ -1,0 +1,12 @@
+<section class="charts">
+    <div class="charts__container">
+        <h2>Stats</h2>
+        <div class="charts__row">
+            <app-chart *ngFor="let chart of chartsArray; let i = index" [id]="'chart'+i" [chartData]="chartsArray[i]"></app-chart>
+        </div>
+    </div>
+    <div class="charts__container">
+        <h2>Stats summary</h2>
+        <canvas id="sumChart"></canvas>
+    </div>
+</section>

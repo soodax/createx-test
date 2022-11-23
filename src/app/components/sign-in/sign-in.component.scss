@@ -1,7 +1,7 @@
 @import '../../../styles.scss';
 
 .background {
-    background: rgba($color: black, $alpha: 0.5);
+    background: rgba($color: $black, $alpha: 0.5);
     position: fixed;
     top: 0;
     right: 0;
@@ -15,7 +15,7 @@
 
 .sign-in {
     overflow-y: scroll;
-    background: white;
+    background: $white;
     max-width: 486px;
     position: relative;
 
@@ -30,7 +30,7 @@
     &__title {
         font-size: 28px;
         line-height: 150%;
-        color: #1E212C;
+        color: $gray900;
         text-align: center;
         @extend %Lato700;
     }
@@ -38,7 +38,7 @@
     &__info {
         font-size: 14px;
         line-height: 150%;
-        color: #787A80;
+        color: $gray700;
         text-align: center;
         @extend %Lato400;
     }
@@ -57,7 +57,7 @@
         span {
             font-size: 14px;
             line-height: 150%;
-            color: #424551;
+            color: $gray800;
             @extend %Lato400;
         }
     }
@@ -66,12 +66,12 @@
         font-size: 14px;
         line-height: 150%;
         text-align: right;
-        color: #FF3F3A;
+        color: $primary;
         @extend %Lato400;
     }
 
     &__button {
-        background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
+        background: linear-gradient(55.95deg, $primary 0%, $orange 100%);
         border-radius: 4px;
         display: flex;
         justify-content: center;
@@ -79,7 +79,7 @@
         font-size: 16px;
         line-height: 52px;
         letter-spacing: 0.5px;
-        color: #FFFFFF;
+        color: $white;
         max-height: 44px;
       
         @extend %Lato700;
@@ -88,11 +88,11 @@
     &__register {
         font-size: 14px;
         line-height: 150%;
-        color: #424551;
+        color: $gray800;
         @extend %Lato400;
 
         a {
-            color: #FF3F3A;
+            color: $primary;
         }
     }
 
@@ -101,14 +101,14 @@
         flex-direction: column;
         align-items: center;
         gap: 16px;
-        border-top: 1px solid #E5E8ED;
+        border-top: 1px solid $gray300;
         padding: 48px;
 
         span {
             text-align: center;
             font-size: 14px;
             line-height: 150%;
-            color: #787A80;
+            color: $gray700;
             @extend %Lato400;
         }
     }

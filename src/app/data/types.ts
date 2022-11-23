@@ -32,3 +32,13 @@ export interface IRecommendArray {
     action: string
     alt: string
 }
+
+export interface IChart {
+    src_office_id: number
+    office_name: string
+    dt_date:any
+    qty_orders: number
+    qty_new: number
+    qty_delivered: number
+    qty_return: number
+}

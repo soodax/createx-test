@@ -29,7 +29,7 @@
     &__type {
         font-size: 16px;
         line-height: 160%;
-        color: #424551;
+        color: $gray800;
         display: flex;
         align-items: center;
         gap: 8px;
@@ -39,7 +39,7 @@
     &__theme {
         font-size: 16px;
         line-height: 160%;
-        color: #FF3F3A;
+        color: $primary;
         @extend %Lato700;
     }
 
@@ -65,7 +65,7 @@
         gap: 8px;
         font-size: 16px;
         line-height: 160%;
-        color: #787A80;
+        color: $gray700;
         @extend %Lato400;
     }
 
@@ -75,7 +75,7 @@
         gap: 8px;
         font-size: 16px;
         line-height: 160%;
-        color: #787A80;
+        color: $gray700;
         @extend %Lato400;
     }
 
@@ -84,7 +84,7 @@
         span {
             font-size: 16px;
             line-height: 160%;
-            color: #1E212C;
+            color: $gray900;
             @extend %Lato700;
         }
         
@@ -109,14 +109,14 @@
     &__paragraph {
         font-size: 16px;
         line-height: 160%;
-        color: #424551;
+        color: $gray800;
         @extend %Lato400;
         margin-bottom: 24px;
 
         &_main {
             font-size: 20px;
             line-height: 150%;
-            color: #1E212C;
+            color: $gray900;
             @extend %Lato700;
             margin-bottom: 24px;
         }
@@ -139,18 +139,18 @@
         gap: 12px;
         font-size: 16px;
         line-height: 160%;
-        color: #1E212C;
+        color: $gray900;
         @extend %Lato700;
         
     }
 
     &__tag {
-        border: 1px solid #D7DADD;
+        border: 1px solid $gray400;
         border-radius: 4px;
         padding: 5.5px 16px;
         font-size: 14px;
         line-height: 150%;
-        color: #787A80;
+        color: $gray700;
         @extend %Lato700;  
     }
 }
@@ -163,7 +163,7 @@
     &__main {
         font-size: 20px;
         line-height: 150%;
-        color: #1E212C;
+        color: $gray900;
         @extend %Lato700;
     }
 }
@@ -171,7 +171,7 @@
 .check-list {
     font-size: 16px;
     line-height: 160%;
-    color: #424551;
+    color: $gray800;
     @extend %Lato400;
     margin-bottom: 24px;
 

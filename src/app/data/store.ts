@@ -91,14 +91,14 @@ export const trendingArray: ITrendingArray[] = [
   },
 ]
 
-export const tagsArray = [
-  '#marketing',
-  '#recruiting',
-  '#coding',
-  '#learning',
-  '#HR',
-  '#self-development'
-]
+// export const tagsArray = [
+//   '#marketing',
+//   '#recruiting',
+//   '#coding',
+//   '#learning',
+//   '#HR',
+//   '#self-development'
+// ]
 
 export const recommendArray: IRecommendArray[] = [
   {

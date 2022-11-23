@@ -35,6 +35,7 @@ $createx-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 @import './app/styles/nullstyle.scss';
+@import './app/styles/vars.scss';
 @import './app/styles/fonts.scss';
 @import './app/styles/headings.scss';
 @import './app/styles/icons.scss';

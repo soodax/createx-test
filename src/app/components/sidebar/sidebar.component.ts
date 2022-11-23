@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
-import { socialsArray, tagsArray, trendingArray } from 'src/app/data/store';
+import { socialsArray, trendingArray } from 'src/app/data/store';
+import { TagsService } from 'src/app/services/tags.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -17,11 +18,12 @@ export class SidebarComponent implements OnInit {
   )
 
   trendingArray = trendingArray
-  tagsArray = tagsArray
+  tagsArray: string[]
 
   constructor(
     private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer
+    private domSanitizer: DomSanitizer,
+    private tagsService: TagsService
   ) {
     this.matIconRegistry.addSvgIcon(
       'calendar-icon',
@@ -53,7 +55,9 @@ export class SidebarComponent implements OnInit {
         this.socialsArray[2].src
       )
     );
-      }
+
+    this.tagsArray = tagsService.getTags()
+  }
 
     ngOnInit(): void {}
 

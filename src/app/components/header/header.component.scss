@@ -44,14 +44,14 @@
     }
 
     &__link {
-        color: #424551;
+        color: $gray800;
         font-size: 16px;
         line-height: 160%;
         @extend %Lato700;
     }
 
     &__link:hover {
-        color: #F75E05;
+        color: $orange;
     }
 }
 
@@ -61,12 +61,12 @@
 
     &__consultation button {
         display: flex;
-        background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
+        background: linear-gradient(55.95deg, $primary 0%, $orange 100%);
         border-radius: 4px;
         padding: 0 40px;
         font-size: 16px;
         line-height: 52px;
-        color: white;
+        color: $white;
         @extend %Lato700;
 
         @media (max-width: 767px) {
@@ -92,11 +92,11 @@
         background: transparent;
         font-size: 16px;
         line-height: 160%;
-        color: #424551;
+        color: $gray800;
         @extend %Lato700;
     }
 }
 
 .active-link {
-    color: #F75E05;
+    color: $orange;
 }

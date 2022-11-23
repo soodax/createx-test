@@ -20,6 +20,10 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { OurBlogComponent } from './components/single-post/our-blog/our-blog.component';
 import { ColorfulDirective } from './directives/colorful.directive';
 import { MatDialogModule } from '@angular/material/dialog';
+import { TagsService } from './services/tags.service';
+import { ChartsComponent } from './components/charts/charts.component';
+import { ChartComponent } from './components/charts/chart/chart.component';
+import { ChartsService } from './services/charts.service';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     SidebarComponent,
     OurBlogComponent,
     ColorfulDirective,
+    ChartsComponent,
+    ChartComponent,
 
   ],
   imports: [
@@ -48,7 +54,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     HttpClientModule,
     MatDialogModule
   ],
-  providers: [],
+  providers: [
+    TagsService,
+    ChartsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

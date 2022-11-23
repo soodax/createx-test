@@ -18,7 +18,7 @@ export class SinglePostComponent implements OnInit {
 
   constructor(
     private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer
+    private domSanitizer: DomSanitizer,
   ) {
     this.matIconRegistry.addSvgIcon(
       'article-icon',

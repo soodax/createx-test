@@ -1,0 +1,62 @@
+@import '../../../../styles.scss';
+
+.chart {
+    width: 800px;
+    height: 400px;
+    position: relative;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    padding: 16px 8px;
+
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        position: relative;
+    }
+}
+
+.chart-fullscreen {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba($color: $white, $alpha: 1);
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.chart-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: transparent;
+    width: 24px;
+    height: 24px;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.title {
+    color: black;
+    font-size: 16px;
+    @extend %Lato400;
+}
+
+.help {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: black;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    @extend %Lato400;
+}
