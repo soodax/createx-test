@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 import { socialsArray } from 'src/app/data/store';
+import { TagsService } from 'src/app/services/tags.service';
 
 @Component({
   selector: 'app-single-post',
@@ -10,15 +11,20 @@ import { socialsArray } from 'src/app/data/store';
 })
 export class SinglePostComponent implements OnInit {
 
+  tagsArray: string[]
+
   socialsArray = socialsArray.filter(el => 
     el.name === 'facebook' || 
     el.name === 'twitter' || 
     el.name === 'linked-in'
   )
 
+  
+
   constructor(
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
+    private tagsService: TagsService
   ) {
     this.matIconRegistry.addSvgIcon(
       'article-icon',
@@ -57,6 +63,11 @@ export class SinglePostComponent implements OnInit {
       )
     );
     
+    this.tagsArray = tagsService.getTags().filter(
+      el => el === '#learning' || 
+      el === '#HR' || 
+      el === '#self-development'
+    )
   }
 
   ngOnInit(): void {}

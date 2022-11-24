@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { SinglePostComponent } from '../components/single-post/single-post.component';
 
 @Injectable({
-  providedIn: SinglePostComponent
+  providedIn: 'root'
 })
 
 export class TagsService {

@@ -67,9 +67,9 @@
                     <div class="article__info">
                         <div class="article__tags">
                             <span>Tags:</span>
-                            <a href="#" class="tags__tag">#learning</a>
-                            <a href="#" class="tags__tag">#HR</a>
-                            <a href="#" class="tags__tag">#self-development</a>
+                            <a href="#" class="tags__tag" *ngFor="let tag of tagsArray">
+                                {{tag}}
+                            </a>
                         </div>
                         <div class="article__socials">
                             <span>Share:</span> 

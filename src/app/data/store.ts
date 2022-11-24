@@ -46,14 +46,16 @@ export const socialsArray: ISocialsArray[] = [
 
 export const contactsArray: IContactsArray[] = [
   {
-    name: 'Talk to us:',
+    name: 'email',
+    info: 'Talk to us:',
     value: 'hello@createx.com',
     iconOrange: 'assets/images/contacts/Chat.svg',
     iconWhite: 'assets/images/footer/Mail.svg',
     alt: 'email icon',
   },
   {
-    name: 'Call us:',
+    name: 'phone',
+    info: 'Call us:',
     value: '4055550128',
     link: '(405) 555-0128',
     iconOrange: 'assets/images/contacts/iPhone.svg',
@@ -61,7 +63,8 @@ export const contactsArray: IContactsArray[] = [
     alt: 'phone icon',
   },
   {
-    name: 'Address:',
+    name: 'adress',
+    info: 'Address:',
     value: '2464 Royal Ln. Mesa, New Jersey 45463, USA',
     iconOrange: 'assets/images/contacts/outline.svg',
     alt: 'adress icon',

@@ -37,13 +37,9 @@
             <div class="footer__list">
                 <span>CONTACT US</span>
                 <ul>
-                    <li>
-                        <img [src]="contactsArray[1].iconWhite" [alt]="contactsArray[1].alt">
-                        <a [href]="'tel:' + contactsArray[1].value">{{contactsArray[1].link}}</a> 
-                    </li>
-                    <li> 
-                        <img [src]="contactsArray[0].iconWhite" [alt]="contactsArray[0].alt">
-                        <a [href]="'mailto:' + contactsArray[0].value">{{contactsArray[0].value}}</a> 
+                    <li *ngFor="let contact of contactsArray">
+                        <img [src]="contact.iconWhite" [alt]="contact.alt">
+                        <a [href]="'tel:' + contact.value">{{contact.value}}</a> 
                     </li>
                 </ul>
             </div>
