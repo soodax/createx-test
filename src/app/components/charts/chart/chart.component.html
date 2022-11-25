@@ -1,6 +1,6 @@
 <div [ngClass]="{'chart': !isFullscreen, 'chart-fullscreen': isFullscreen}">
     <div class="chart__info">
-        <span class="title">
+        <span *ngIf="chartData" class="title">
             {{chartData[0].office_name}}
         </span>
         <span class="help" *ngIf="isFullscreen">

@@ -21,6 +21,44 @@ export class ChartsService {
     this.sortChartsArray.push(chartGroup)    
   })
 
+  dateArray = Array.from(
+    new Set(
+      this.chartsArray
+        .sort(
+          (a, b) =>
+            <number>new Date(a.dt_date).getTime() -
+            <number>new Date(b.dt_date).getTime()
+        )
+        .map((el) => el.dt_date)
+    )
+  );
+
+  summaryOrders: number[] = [];
+  summaryNew: number[] = [];
+  summaryDelivered: number[] = [];
+  summaryReturned: number[] = [];
+
+  summaryArray = this.dateArray.forEach((date) => {
+    let ordersTemp = 0;
+    let returnedTemp = 0;
+    let deliveredTemp = 0;
+    let newTemp = 0;
+
+    this.chartsArray.forEach((el) => {
+      if (el.dt_date === date) {
+        ordersTemp += el.qty_orders;
+        returnedTemp += el.qty_return;
+        deliveredTemp += el.qty_delivered;
+        newTemp += el.qty_new;
+      }
+    });
+
+    this.summaryOrders.push(ordersTemp);
+    this.summaryReturned.push(returnedTemp);
+    this.summaryDelivered.push(deliveredTemp);
+    this.summaryNew.push(newTemp);
+  });
+
   //Метод получения изначального массива
   getCharts(): IChart[] {
     return [...this.chartsArray]
@@ -31,4 +69,25 @@ export class ChartsService {
     return [...this.sortChartsArray]
   }
 
+  getSummaryNew(): number[] {
+    return [...this.summaryNew]
+  }
+
+  getSummaryOrders(): number[] {
+    return [...this.summaryOrders]
+  }
+
+  getSummaryDelivered(): number[] {
+    return [...this.summaryDelivered]
+  }
+
+  getSummaryReturned(): number[] {
+    return [...this.summaryReturned]
+  }
+
+  getDateArray(): string[] {
+    return [...this.dateArray]
+  }
+
 }
+
