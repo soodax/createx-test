@@ -1,41 +1,62 @@
 <!-- <app-sign-in></app-sign-in> -->
-<header id="header" >
-    <div class="container">
-        <div class="header__row">
-            <nav class="nav">
-                <div class="logo">
-                    <img src="assets/images/logo.svg" alt="web site logo">
-                </div>
-                <ul class="nav__menu">
-                    <li>
-                        <a class="nav__link" routerLinkActive="active-link" href="#">About Us</a> 
-                    </li>
-                    <li> 
-                        <a class="nav__link" routerLinkActive="active-link" href="#">Courses</a> 
-                    </li>
-                    <li> 
-                        <a class="nav__link" routerLinkActive="active-link" href="#">Events</a> 
-                    </li>
-                    <li> 
-                        <a class="nav__link" routerLinkActive="active-link" routerLink="/single-post">Blog</a> 
-                    </li>
-                    <li> 
-                        <a class="nav__link" routerLinkActive="active-link" routerLink="/contacts">Contacts</a> 
-                    </li>
-                    <li> 
-                        <a class="nav__link" routerLinkActive="active-link" routerLink="/charts">Charts</a> 
-                    </li>
-                </ul>
-            </nav>
-            <div class="services">
-                <div class="services__consultation">
-                    <button (click)="openDialog('sign-in')">Get consultation</button>
-                </div>
-                <div class="services__login">
-                    <img src="assets/images/Person.svg" alt="person icon">
-                    <button (click)="openDialog('sign-up')">Log in/Register</button>
-                </div>
-            </div>
+<header id="header">
+  <div class="container">
+    <div class="header__row">
+      <nav class="nav">
+        <div class="logo">
+          <img src="assets/images/logo.svg" alt="web site logo" />
         </div>
+        <ul class="nav__menu">
+          <li>
+            <a class="nav__link" routerLinkActive="active-link" href="#"
+              >About Us</a
+            >
+          </li>
+          <li>
+            <a class="nav__link" routerLinkActive="active-link" href="#"
+              >Courses</a
+            >
+          </li>
+          <li>
+            <a class="nav__link" routerLinkActive="active-link" href="#"
+              >Events</a
+            >
+          </li>
+          <li>
+            <a
+              class="nav__link"
+              routerLinkActive="active-link"
+              routerLink="/single-post"
+              >Blog</a
+            >
+          </li>
+          <li>
+            <a
+              class="nav__link"
+              routerLinkActive="active-link"
+              routerLink="/contacts"
+              >Contacts</a
+            >
+          </li>
+          <li>
+            <a
+              class="nav__link"
+              routerLinkActive="active-link"
+              routerLink="/charts"
+              >Charts</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="services">
+        <div class="services__consultation">
+          <button (click)="openDialog('sign-in')">Get consultation</button>
+        </div>
+        <div class="services__login">
+          <img src="assets/images/Person.svg" alt="person icon" />
+          <button (click)="openDialog('sign-up')">Log in/Register</button>
+        </div>
+      </div>
     </div>
+  </div>
 </header>

@@ -1,0 +1,22 @@
+@import '../../../../styles.scss';
+
+.select {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    line-height: 160%;
+    color: $gray800;
+    @extend %Lato700;
+    max-height: 44px;
+
+    select {
+        padding: 12px 16px;
+        border: 1px solid $gray400;
+        border-radius: 4px;
+        font-size: 14px;
+        line-height: 150%;
+        @extend %Lato400;
+        color: $gray800;
+    }
+}

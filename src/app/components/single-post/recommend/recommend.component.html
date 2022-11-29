@@ -1,0 +1,19 @@
+<section class="recommend">
+  <div class="container">
+    <h6>Our blog</h6>
+    <h1>You may also like</h1>
+    <div class="recommend__nav"></div>
+    <div class="recommend__row">
+      <app-media-card
+        *ngFor="let card of mediaCardArray | slice : 0 : 3"
+        [mediaCardData]="card"
+      ></app-media-card>
+    </div>
+    <div class="recommend__more">
+      <h3>Do you want more articles, podcasts and videos?</h3>
+      <a (click)="scrollTop()" class="button" routerLink="/single-post/blog"
+        >Go to blog</a
+      >
+    </div>
+  </div>
+</section>

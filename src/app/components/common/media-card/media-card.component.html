@@ -1,0 +1,34 @@
+<div class="card">
+  <div class="card__type">
+    <img [src]="mediaCardData.icon" alt="" />
+    {{ mediaCardData.type }}
+  </div>
+  <div class="card__image">
+    <img appColorful [src]="mediaCardData.image" [alt]="mediaCardData.alt" />
+  </div>
+  <div class="card__info">
+    <span class="card__theme">
+      {{ mediaCardData.theme }}
+    </span>
+    <span class="card__marker">
+      <mat-icon class="interface-icon" svgIcon="calendar-icon"></mat-icon>
+      {{ mediaCardData.date }}
+    </span>
+    <span *ngIf="mediaCardData.duration" class="card__marker">
+      <mat-icon class="interface-icon" svgIcon="calendar-icon"></mat-icon>
+      {{ mediaCardData.duration }}
+    </span>
+  </div>
+  <div class="card__title">
+    {{ mediaCardData.title }}
+  </div>
+  <div class="card__fragment">
+    {{ mediaCardData.fragment }}
+  </div>
+  <div>
+    <button class="card__action">
+      {{ mediaCardData.action }}
+      <mat-icon svgIcon="right-icon"></mat-icon>
+    </button>
+  </div>
+</div>

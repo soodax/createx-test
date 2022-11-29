@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Chart, ChartItem } from 'chart.js/auto';
+import { HttpClient } from '@angular/common/http';
+import { Component, Inject } from '@angular/core';
 import { ChartsService } from 'src/app/services/charts.service';
 import { HostService } from 'src/app/services/host.service';
+import { HOST } from '../../app.module';
 
 @Component({
   selector: 'app-charts',
@@ -10,13 +11,25 @@ import { HostService } from 'src/app/services/host.service';
 })
 export class ChartsComponent {
   //Получаем через конструктор доступ к сервису
-  constructor(private chartService: ChartsService, private hostService: HostService) {}
+  constructor(
+    private chartService: ChartsService,
+    private httpClient: HttpClient,
+    @Inject(HOST) private hostService: HostService
+  ) {}
 
   //Получаем сортированный массив графиков
-  chartsArray = this.chartService.getSortedCharts()
+  chartsArray = this.chartService.getSortedCharts();
 
   //Отрисовка данных на всем отрезке времени
   ngAfterViewInit(): void {
-    console.log(this.hostService.getHost())
+    //Проверка сервиса хоста
+    console.log(this.hostService.getHost());
+
+    //Проверка интерсептора
+    console.log(
+      this.httpClient
+        .get('https://jsonplaceholder.typicode.com/todos/1')
+        .subscribe((data) => console.log(data))
+    );
   }
 }

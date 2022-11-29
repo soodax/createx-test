@@ -1,31 +1,35 @@
 @import '../../../../styles.scss';
 
-.recommend {
+.card {
+    flex: 1 1 33.333%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
 
-    &__nav {
-    }
-
-    &__row {
+    &__type {
+        position: absolute;
+        top: 12px;
+        left: 12px;
         display: flex;
-        gap: 30px;
-
-        @media (max-width: 768px) {
-            flex-direction: column;
-        }
-    }
-
-    &__col {
-        flex: 1 1 33.333%;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
+        align-items: center;
+        gap: 4px;
+        background: $white;
+        border-radius: 4px;
+        overflow: hidden;
+        padding: 2.5px 8px;
+        font-size: 14px;
+        line-height: 150%;
+        color: $gray800;
+        z-index: 2;
+        @extend %Lato400;
     }
 
     &__image {
         img {
             cursor: pointer;
             width: 100%;
-            filter: blur(8px);
+            filter: grayscale(1);
         }
     }
 
@@ -42,7 +46,7 @@
         line-height: 150%;
         color: $gray700;
         border-left: 1px solid $gray700;
-        padding-left: 12px;
+        padding: 0 12px;
         @extend %Lato400;
     }
 
@@ -80,11 +84,5 @@
         
     }
 
-    &__more {
-        margin: 80px 0 185px 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-    }
+
 }

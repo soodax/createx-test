@@ -2,23 +2,21 @@ import { Injectable } from '@angular/core';
 import { SinglePostComponent } from '../components/single-post/single-post.component';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class TagsService {
-
   tagsArray = [
     '#marketing',
     '#recruiting',
     '#coding',
     '#learning',
     '#HR',
-    '#self-development'
-  ]
+    '#self-development',
+  ];
 
   getTags(): string[] {
-    return [...this.tagsArray]
+    return [...this.tagsArray];
   }
 
-  constructor() { }
+  constructor() {}
 }

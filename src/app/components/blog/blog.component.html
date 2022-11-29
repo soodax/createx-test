@@ -1,0 +1,21 @@
+<section class="blog">
+  <div class="container">
+    <h6>Our blog</h6>
+    <h1>Createx School Journal</h1>
+    <div class="blog__params">
+      <app-cards-filter></app-cards-filter>
+      <div class="blog__nav">
+        <app-select></app-select>
+        <app-search></app-search>
+      </div>
+    </div>
+    <div class="blog__row">
+      <app-media-card
+        class="blog__card"
+        *ngFor="let card of mediaCardsArray"
+        [mediaCardData]="card"
+      ></app-media-card>
+    </div>
+  </div>
+</section>
+<app-newsletter></app-newsletter>

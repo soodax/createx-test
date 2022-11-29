@@ -1,18 +1,16 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-questions',
-    templateUrl: './questions.component.html',
-    styleUrls: ['./questions.component.scss']
+  selector: 'app-questions',
+  templateUrl: './questions.component.html',
+  styleUrls: ['./questions.component.scss'],
 })
-
 export class QuestionsComponent {
-    isAgree = true
+  isAgree = true;
 
-    ngOnInit() : void{
-    }
+  ngOnInit(): void {}
 
-    checkboxToggle() {   
-        this.isAgree = !this.isAgree
-      }
+  checkboxToggle() {
+    this.isAgree = !this.isAgree;
+  }
 }

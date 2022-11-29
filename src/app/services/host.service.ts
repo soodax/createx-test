@@ -1,13 +1,10 @@
 import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class HostService {
-
-  constructor() { }
+  constructor() {}
 
   getHost(): string {
-    return window.location.host
+    return window.location.host;
   }
 }

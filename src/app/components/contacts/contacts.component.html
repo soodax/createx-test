@@ -1,34 +1,37 @@
 <section class="contacts">
-    <div class="container">
-        <div class="contacts__row">
-            <div class="contacts__info">
-                <h6>Contact info</h6>
-                <h1>Get in touch</h1>
-                <div *ngIf="contactsArray" class="contacts__list">
-                    <div *ngFor="let item of contactsArray" class="contacts__item">
-                        <div class="contacts__icon">
-                            <img [src]="item.iconOrange" [alt]="item.alt">
-                        </div>
-                        <div class="contacts__block">
-                            <div class="contacts__method">
-                                {{item.info}}
-                            </div>
-                            <a [href]="item.link" class="contacts__main">
-                                {{item.value}}
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <h6>Follow us:</h6>
-                <div *ngIf="socialsArray" class="socials">
-                    <a *ngFor="let social of socialsArray | slice:0:6">
-                        <mat-icon class="social-icon-default" [svgIcon]="social.name + '-icon'"></mat-icon>
-                    </a>
-                </div>            
+  <div class="container">
+    <div class="contacts__row">
+      <div class="contacts__info">
+        <h6>Contact info</h6>
+        <h1>Get in touch</h1>
+        <div *ngIf="contactsArray" class="contacts__list">
+          <div *ngFor="let item of contactsArray" class="contacts__item">
+            <div class="contacts__icon">
+              <img [src]="item.iconOrange" [alt]="item.alt" />
             </div>
-            <div class="contacts__map">
-                <div id="map"></div>
+            <div class="contacts__block">
+              <div class="contacts__method">
+                {{ item.info }}
+              </div>
+              <a [href]="item.link" class="contacts__main">
+                {{ item.value }}
+              </a>
             </div>
+          </div>
         </div>
+        <h6>Follow us:</h6>
+        <div *ngIf="socialsArray" class="socials">
+          <a *ngFor="let social of socialsArray | slice : 0 : 6">
+            <mat-icon
+              class="social-icon-default"
+              [svgIcon]="social.name + '-icon'"
+            ></mat-icon>
+          </a>
+        </div>
+      </div>
+      <div class="contacts__map">
+        <div id="map"></div>
+      </div>
     </div>
+  </div>
 </section>

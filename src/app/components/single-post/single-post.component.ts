@@ -3,6 +3,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 import { socialsArray } from 'src/app/data/store';
 import { TagsService } from 'src/app/services/tags.service';
+import { IconsService } from 'src/app/services/icons.service';
 
 @Component({
   selector: 'app-single-post',
@@ -10,21 +11,18 @@ import { TagsService } from 'src/app/services/tags.service';
   styleUrls: ['./single-post.component.scss'],
 })
 export class SinglePostComponent implements OnInit {
+  tagsArray: string[];
 
-  tagsArray: string[]
-
-  socialsArray = socialsArray.filter(el => 
-    el.name === 'facebook' || 
-    el.name === 'twitter' || 
-    el.name === 'linked-in'
-  )
-
-  
+  socialsArray = socialsArray.filter(
+    (el) =>
+      el.name === 'facebook' || el.name === 'twitter' || el.name === 'linked-in'
+  );
 
   constructor(
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
-    private tagsService: TagsService
+    private tagsService: TagsService,
+    private iconsService: IconsService
   ) {
     this.matIconRegistry.addSvgIcon(
       'article-icon',
@@ -46,28 +44,22 @@ export class SinglePostComponent implements OnInit {
     );
     this.matIconRegistry.addSvgIcon(
       'facebook-icon',
-      this.domSanitizer.bypassSecurityTrustResourceUrl(
-        this.socialsArray[0].src
-      )
+      this.domSanitizer.bypassSecurityTrustResourceUrl(this.socialsArray[0].src)
     );
     this.matIconRegistry.addSvgIcon(
       'twitter-icon',
-      this.domSanitizer.bypassSecurityTrustResourceUrl(
-        this.socialsArray[1].src
-      )
+      this.domSanitizer.bypassSecurityTrustResourceUrl(this.socialsArray[1].src)
     );
     this.matIconRegistry.addSvgIcon(
       'linked-in-icon',
-      this.domSanitizer.bypassSecurityTrustResourceUrl(
-        this.socialsArray[2].src
-      )
+      this.domSanitizer.bypassSecurityTrustResourceUrl(this.socialsArray[2].src)
     );
-    
-    this.tagsArray = tagsService.getTags().filter(
-      el => el === '#learning' || 
-      el === '#HR' || 
-      el === '#self-development'
-    )
+
+    this.tagsArray = tagsService
+      .getTags()
+      .filter(
+        (el) => el === '#learning' || el === '#HR' || el === '#self-development'
+      );
   }
 
   ngOnInit(): void {}

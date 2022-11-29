@@ -1,15 +1,15 @@
-<div [ngClass]="{'chart': !isFullscreen, 'chart-fullscreen': isFullscreen}">
-    <div class="chart__info">
-        <span *ngIf="chartData" class="title">
-            {{chartData[0].office_name}}
-        </span>
-        <span class="help" *ngIf="isFullscreen">
-            press ESC to exit fullscreen
-            <mat-icon>info</mat-icon>
-        </span> 
-    </div>              
-    <canvas [id]="id"></canvas>
-    <button *ngIf="!isFullscreen" class="chart-btn" (click)="toggleFullscreen()">
-        <mat-icon>fullscreen</mat-icon>
-    </button>
+<div [ngClass]="{ chart: !isFullscreen, 'chart-fullscreen': isFullscreen }">
+  <div class="chart__info">
+    <span *ngIf="chartData" class="title">
+      {{ chartData[0].office_name }}
+    </span>
+    <span class="help" *ngIf="isFullscreen">
+      press ESC to exit fullscreen
+      <mat-icon>info</mat-icon>
+    </span>
+  </div>
+  <canvas [id]="id"></canvas>
+  <button *ngIf="!isFullscreen" class="chart-btn" (click)="toggleFullscreen()">
+    <mat-icon>fullscreen</mat-icon>
+  </button>
 </div>

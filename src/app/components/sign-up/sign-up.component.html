@@ -1,74 +1,128 @@
 <div class="background">
-    <div class="sign-up">
-        <form [formGroup]="signUpForm" class="sign-up__form">
-            <span class="sign-up__title">Sign up</span>
-            <p class="sign-up__info">
-                Registration takes less than a minute but gives you full control over your studying.
-            </p>
-            <div class="form-item">
-                <label for="name">Full Name</label>
-                <input formControlName="name" type="text" class="input"
-                    [ngClass]="{'input-error': submitted && !signUpForm.valid, 'input-default': !submitted}"
-                    placeholder="Your full name">
-                <div class="danger-message" *ngIf="submitted && !signUpForm.valid">
-                    Please provide a valid input.
-                </div>
-                <div class="success-message" *ngIf="signUpForm.valid">Looks good!</div>
-            </div>
-            <div class="form-item">
-                <label for="email">Email</label>
-                <input formControlName="email" type="email" class="input"
-                    [ngClass]="{'input-error': submitted && !signUpForm.valid, 'input-default': !submitted}"
-                    placeholder="Your working email">
-                <div class="danger-message" *ngIf="submitted && !signUpForm.valid ">
-                    Please provide a valid input.
-                </div>
-                <div class="success-message" *ngIf="signUpForm.valid">Looks good!</div>
-            </div>
-            <div class="form-item">
-                <label for="password">Password</label>
-                <input formControlName="password" #passwordInputRef1 [type]="inputType" placeholder="Your password"
-                    class="input"
-                    [ngClass]="{'input-error': submitted && !signUpForm.valid, 'input-default': !submitted}">
-                <button (click)="toggleHidden()" class="password" [ngClass]="{'password-checked': isPasswordHidden, 'password-unchecked': !isPasswordHidden}">
-                </button>
-                <div class="danger-message" *ngIf="submitted && !signUpForm.valid">
-                    Please provide a valid input.</div>
-                <div class="success-message" *ngIf="signUpForm.valid">Looks good!</div>
-            </div>
-            <div class="form-item">
-                <label for="password">Confirm Password</label>
-                <input formControlName="password" #passwordInputRef2 [type]="inputType" placeholder="Your password"
-                    class="input"
-                    [ngClass]="{'input-error': submitted && !signUpForm.valid, 'input-default': !submitted}">
-                <button (click)="toggleHidden()" class="password" [ngClass]="{'password-checked': isPasswordHidden, 'password-unchecked': !isPasswordHidden}">
-                </button>
-                <div class="danger-message" *ngIf="submitted && !signUpForm.valid">
-                    Please provide a valid input.</div>
-                <div class="success-message" *ngIf="signUpForm.valid">Looks good!</div>
-            </div>
-            <div class="sign-up__settings">
-                <div class="sign-up__keep">
-                    <button (click)="checkboxToggle()" class="checkbox" [ngClass]="{'checkbox-checked': isRememberMe, 'checkbox-unchecked': !isRememberMe}">
-                    </button>
-                    <span>Remember me</span>
-                </div>
-            </div>
-            <button (click)="onSubmit()" class="sign-up__button">Sign up</button>
-            <div class="sign-up__register">
-                Already have an account? <a>Sign in</a>
-            </div>
-        </form>
-        <div class="sign-up__socials">
-            <span>Or sign in with</span>
-            <div *ngIf="socialsArray" class="sign-up__icons">
-                <a *ngFor="let social of socialsArray">
-                    <mat-icon class="social-icon-small" [svgIcon]="social.name + '-icon'"></mat-icon>
-                </a>
-            </div>
+  <div class="sign-up">
+    <form [formGroup]="signUpForm" class="sign-up__form">
+      <span class="sign-up__title">Sign up</span>
+      <p class="sign-up__info">
+        Registration takes less than a minute but gives you full control over
+        your studying.
+      </p>
+      <div class="form-item">
+        <label for="name">Full Name</label>
+        <input
+          formControlName="name"
+          type="text"
+          class="input"
+          [ngClass]="{
+            'input-error': submitted && !signUpForm.valid,
+            'input-default': !submitted
+          }"
+          placeholder="Your full name"
+        />
+        <div class="danger-message" *ngIf="submitted && !signUpForm.valid">
+          Please provide a valid input.
         </div>
-        <button mat-button mat-dialog-close class="btn-close">
-            <img src="assets/images/sign-in/Cross.svg" alt="close button">
-        </button>
+        <div class="success-message" *ngIf="signUpForm.valid">Looks good!</div>
+      </div>
+      <div class="form-item">
+        <label for="email">Email</label>
+        <input
+          formControlName="email"
+          type="email"
+          class="input"
+          [ngClass]="{
+            'input-error': submitted && !signUpForm.valid,
+            'input-default': !submitted
+          }"
+          placeholder="Your working email"
+        />
+        <div class="danger-message" *ngIf="submitted && !signUpForm.valid">
+          Please provide a valid input.
+        </div>
+        <div class="success-message" *ngIf="signUpForm.valid">Looks good!</div>
+      </div>
+      <div class="form-item">
+        <label for="password">Password</label>
+        <input
+          formControlName="password"
+          #passwordInputRef1
+          [type]="inputType"
+          placeholder="Your password"
+          class="input"
+          [ngClass]="{
+            'input-error': submitted && !signUpForm.valid,
+            'input-default': !submitted
+          }"
+        />
+        <button
+          (click)="toggleHidden()"
+          class="password"
+          [ngClass]="{
+            'password-checked': isPasswordHidden,
+            'password-unchecked': !isPasswordHidden
+          }"
+        ></button>
+        <div class="danger-message" *ngIf="submitted && !signUpForm.valid">
+          Please provide a valid input.
+        </div>
+        <div class="success-message" *ngIf="signUpForm.valid">Looks good!</div>
+      </div>
+      <div class="form-item">
+        <label for="password">Confirm Password</label>
+        <input
+          formControlName="password"
+          #passwordInputRef2
+          [type]="inputType"
+          placeholder="Your password"
+          class="input"
+          [ngClass]="{
+            'input-error': submitted && !signUpForm.valid,
+            'input-default': !submitted
+          }"
+        />
+        <button
+          (click)="toggleHidden()"
+          class="password"
+          [ngClass]="{
+            'password-checked': isPasswordHidden,
+            'password-unchecked': !isPasswordHidden
+          }"
+        ></button>
+        <div class="danger-message" *ngIf="submitted && !signUpForm.valid">
+          Please provide a valid input.
+        </div>
+        <div class="success-message" *ngIf="signUpForm.valid">Looks good!</div>
+      </div>
+      <div class="sign-up__settings">
+        <div class="sign-up__keep">
+          <button
+            (click)="checkboxToggle()"
+            class="checkbox"
+            [ngClass]="{
+              'checkbox-checked': isRememberMe,
+              'checkbox-unchecked': !isRememberMe
+            }"
+          ></button>
+          <span>Remember me</span>
+        </div>
+      </div>
+      <button (click)="onSubmit()" class="sign-up__button">Sign up</button>
+      <div class="sign-up__register">
+        Already have an account? <a>Sign in</a>
+      </div>
+    </form>
+    <div class="sign-up__socials">
+      <span>Or sign in with</span>
+      <div *ngIf="socialsArray" class="sign-up__icons">
+        <a *ngFor="let social of socialsArray">
+          <mat-icon
+            class="social-icon-small"
+            [svgIcon]="social.name + '-icon'"
+          ></mat-icon>
+        </a>
+      </div>
     </div>
+    <button mat-button mat-dialog-close class="btn-close">
+      <img src="assets/images/sign-in/Cross.svg" alt="close button" />
+    </button>
+  </div>
 </div>

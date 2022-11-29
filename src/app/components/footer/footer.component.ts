@@ -10,5 +10,10 @@ export class FooterComponent {
   contactsArray = contactsArray.filter(
     (el) => el.name === 'phone' || el.name === 'email'
   );
+
   socialsArray = socialsArray;
+
+  scrollTop() {
+    window.scrollTo(0, 0);
+  }
 }

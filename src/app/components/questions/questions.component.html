@@ -1,50 +1,80 @@
 <section class="questions">
-    <div class="container">
-        <div class="questions__row">
-            <div class="questions__illustration">
-                <img src="assets/images/questions/illustration.svg" alt="woman illustration">
+  <div class="container">
+    <div class="questions__row">
+      <div class="questions__illustration">
+        <img
+          src="assets/images/questions/illustration.svg"
+          alt="woman illustration"
+        />
+      </div>
+      <div class="questions__main">
+        <h6>Any questions?</h6>
+        <h1>Drop us a line</h1>
+        <div class="questions-form">
+          <div class="questions-form__row">
+            <div class="form-item">
+              <label>First Name*</label>
+              <input
+                class="input input-default"
+                type="text"
+                placeholder="Your first name"
+              />
             </div>
-            <div class="questions__main">
-                <h6>Any questions?</h6>
-                <h1>Drop us a line</h1>
-                <div class="questions-form">
-                    <div class="questions-form__row">
-                        <div class="form-item">
-                            <label>First Name*</label>
-                            <input class="input input-default" type="text" placeholder="Your first name">
-                        </div>
-                        <div class="form-item">
-                            <label>Last  Name*</label>
-                            <input class="input input-default" type="text" placeholder="Your last name">
-                        </div>
-                    </div>
-                    <div class="questions-form__row">
-                        <div class="form-item">
-                            <label>Email*</label>
-                            <input class="input input-default" type="text" placeholder="Your working email">
-                        </div>
-                        <div class="form-item">
-                            <label>Phone</label>
-                            <input class="input input-default" type="text" placeholder="Your phone number">
-                        </div>
-                    </div>
-                    <div class="questions-form__row">
-                        <div class="form-item">
-                            <label>Message*</label>
-                            <input class="input input-default" type="text" placeholder="Your message">
-                        </div>
-                    </div>
-                </div>
-                <div class="agreement">
-                    <div class="agreement__info">
-                        <button (click)="checkboxToggle()" class="checkbox" [ngClass]="{'checkbox-checked': isAgree, 'checkbox-unchecked': !isAgree}"></button>  
-                        I agree to receive communications from Createx Online School
-                    </div>
-                    <div class="agreement__submit">
-                        <button>Send message</button>
-                    </div>
-                </div>
+            <div class="form-item">
+              <label>Last Name*</label>
+              <input
+                class="input input-default"
+                type="text"
+                placeholder="Your last name"
+              />
             </div>
+          </div>
+          <div class="questions-form__row">
+            <div class="form-item">
+              <label>Email*</label>
+              <input
+                class="input input-default"
+                type="text"
+                placeholder="Your working email"
+              />
+            </div>
+            <div class="form-item">
+              <label>Phone</label>
+              <input
+                class="input input-default"
+                type="text"
+                placeholder="Your phone number"
+              />
+            </div>
+          </div>
+          <div class="questions-form__row">
+            <div class="form-item">
+              <label>Message*</label>
+              <input
+                class="input input-default"
+                type="text"
+                placeholder="Your message"
+              />
+            </div>
+          </div>
         </div>
+        <div class="agreement">
+          <div class="agreement__info">
+            <button
+              (click)="checkboxToggle()"
+              class="checkbox"
+              [ngClass]="{
+                'checkbox-checked': isAgree,
+                'checkbox-unchecked': !isAgree
+              }"
+            ></button>
+            I agree to receive communications from Createx Online School
+          </div>
+          <div class="agreement__submit">
+            <button>Send message</button>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
