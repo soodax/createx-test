@@ -13,6 +13,8 @@
       <app-media-card
         class="blog__card"
         *ngFor="let card of mediaCardsArray"
+        routerLink="/blog/single-post"
+        (click)="scrollTop()"
         [mediaCardData]="card"
       ></app-media-card>
     </div>

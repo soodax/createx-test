@@ -56,4 +56,8 @@ export class BlogComponent implements OnInit {
   mediaCardsArray = this.mediaCardsService.getBlogData();
 
   ngOnInit(): void {}
+
+  scrollTop() {
+    window.scrollTo(0, 0);
+  }
 }

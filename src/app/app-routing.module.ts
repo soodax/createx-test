@@ -11,11 +11,11 @@ import { SinglePostComponent } from './components/single-post/single-post.compon
 const routes: Routes = [
   { path: '', component: NotFoundComponent },
   { path: 'contacts', component: ContactsContainerComponent },
-  { path: 'single-post', component: SinglePostComponent },
+  { path: 'blog', component: BlogComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'charts', component: ChartsComponent },
-  { path: 'single-post/blog', component: BlogComponent },
+  { path: 'blog/single-post', component: SinglePostComponent },
 ];
 
 @NgModule({
