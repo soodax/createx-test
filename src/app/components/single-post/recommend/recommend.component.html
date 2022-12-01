@@ -7,13 +7,13 @@
       <app-media-card
         *ngFor="let card of mediaCardArray | slice : 0 : 3"
         [mediaCardData]="card"
+        routerLink="/single-post"
+        (click)="scrollTop()"
       ></app-media-card>
     </div>
     <div class="recommend__more">
       <h3>Do you want more articles, podcasts and videos?</h3>
-      <a (click)="scrollTop()" routerLink="/blog" class="button"
-        >Go to blog</a
-      >
+      <a (click)="scrollTop()" routerLink="/blog" class="button">Go to blog</a>
     </div>
   </div>
 </section>

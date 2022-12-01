@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'charts', component: ChartsComponent },
-  { path: 'blog/single-post', component: SinglePostComponent },
+  { path: 'single-post', component: SinglePostComponent },
 ];
 
 @NgModule({
