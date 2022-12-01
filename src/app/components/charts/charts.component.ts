@@ -8,6 +8,7 @@ import { HOST } from '../../app.module';
   selector: 'app-charts',
   templateUrl: './charts.component.html',
   styleUrls: ['./charts.component.scss'],
+  providers: [ChartsService],
 })
 export class ChartsComponent {
   //Получаем через конструктор доступ к сервису

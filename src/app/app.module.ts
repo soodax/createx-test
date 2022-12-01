@@ -69,7 +69,6 @@ export const HOST = new InjectionToken<string>('');
   ],
   providers: [
     TagsService,
-    ChartsService,
     { provide: HOST, useClass: HostService },
     {
       provide: HTTP_INTERCEPTORS,

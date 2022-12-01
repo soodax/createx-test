@@ -11,12 +11,10 @@ export class IconsService {
     private domSanitizer: DomSanitizer
   ) {}
 
-  // getIcons() {
-  //   this.matIconRegistry.addSvgIcon(
-  //     'article-icon',
-  //     this.domSanitizer.bypassSecurityTrustResourceUrl(
-  //       'assets/images/single-post/Files.svg'
-  //     )
-  //   );
-  // }
+  setSvgIcon(name: string, path: string): MatIconRegistry {
+    return this.matIconRegistry.addSvgIcon(
+      name,
+      this.domSanitizer.bypassSecurityTrustResourceUrl(path)
+    );
+  }
 }

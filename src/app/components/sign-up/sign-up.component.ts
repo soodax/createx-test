@@ -1,8 +1,6 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { socialsArray } from 'src/app/data/store';
-import { DomSanitizer } from '@angular/platform-browser';
-import { MatIconRegistry } from '@angular/material/icon';
 
 @Component({
   selector: 'app-sign-up',
@@ -18,20 +16,7 @@ export class SignUpComponent implements OnInit {
       el.name === 'linked-in'
   );
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer
-  ) {
-    for (let i = 0; i < this.socialsArray.length; i++) {
-      this.matIconRegistry.addSvgIcon(
-        `${this.socialsArray[i].name}-icon`,
-        this.domSanitizer.bypassSecurityTrustResourceUrl(
-          this.socialsArray[i].src
-        )
-      );
-    }
-  }
+  constructor(private formBuilder: FormBuilder) {}
 
   //Поля для видимости пароля\rememberMe
   isRememberMe = true;

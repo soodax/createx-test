@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
+import { ChartsComponent } from '../components/charts/charts.component';
 import charts from '../data/charts.json';
 import { IChart } from '../data/types';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class ChartsService {
   constructor() {}
 

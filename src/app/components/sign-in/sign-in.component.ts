@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { socialsArray } from 'src/app/data/store';
-import { DomSanitizer } from '@angular/platform-browser';
-import { MatIconRegistry } from '@angular/material/icon';
 
 @Component({
   selector: 'app-sign-in',
@@ -27,20 +25,7 @@ export class SignInComponent {
   isPasswordHidden = true;
   inputType = 'password';
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer
-  ) {
-    for (let i = 0; i < this.socialsArray.length; i++) {
-      this.matIconRegistry.addSvgIcon(
-        `${this.socialsArray[i].name}-icon`,
-        this.domSanitizer.bypassSecurityTrustResourceUrl(
-          this.socialsArray[i].src
-        )
-      );
-    }
-  }
+  constructor(private formBuilder: FormBuilder) {}
 
   //Условия валидации
   ngOnInit(): void {

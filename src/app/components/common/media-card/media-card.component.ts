@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IRecommendArray } from 'src/app/data/types';
-import { MediaCardService } from 'src/app/services/media-card.service';
 
 @Component({
   selector: 'app-media-card',
